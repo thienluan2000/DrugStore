@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { menuList } from './menu-list';
 
 @Component({
   selector: 'app-menu',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit {
-
+  sideMenu  = menuList;
+  collapse = false;
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  toggleSidebar() {
+    this.collapse = !this.collapse;
+  }
 }

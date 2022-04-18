@@ -15,19 +15,19 @@ export class AppComponent {
         'Kit test covid',
         '/assets/images/kittest.jpg',
         5,
-        ['Dụng cụ y tế','kittest']
+        ['Medical instruments','Kittest']
         ),
       new Product(
-        'Khẩu trang y tế loại 1',
+        'Medical mask type 1',
         '/assets/images/mask.jpg',
         1,
-        ['Khẩu trang','khẩu trang y tế loại 1']
+        ['Mask','Medical mask type 1']
         ),
       new Product(
-        'Siro ho',
+        'Siro Prospan',
         '/assets/images/siro.jpg',
         10,
-        ['Thuốc','siro']
+        ['Medicine','Siro']
         )
     ];
   }

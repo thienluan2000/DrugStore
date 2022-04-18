@@ -1,16 +1,28 @@
 <!-- This is header component-->
-<div class="container-fluid p-1 bg-primary text-white">
+<div class="container-fluid p-1 bg-primary">
     <div class="row">
       <div class="col">
-        <app-img-logo></app-img-logo>
+        <img src="assets/images/logo.png" class="img-fluid thumbnail-border-width mt-2 ps-2" alt="LogoDrugStore">
       </div>
       <div class="col">
         <app-search-bar></app-search-bar>
       </div>
       <div class="col">
-        <app-header-button></app-header-button>
+        <div class="row">
+          <div class="col"> 
+            <button  type="button" class="bi bi-person btn bg-light text-nowrap btn-lg" style="margin-top: 50px;"> Sign in</button>
+          </div>
+          <div class="col"> 
+            <button type="button" class="bi bi-person-plus btn bg-light text-nowrap btn-lg" style="margin-top:50px;"> Sign Up</button>  
+          </div>
+          <div class="col"> 
+            <button type="button" class="bi bi-cart-dash btn bg-light text-nowrap btn-lg" style="margin-top: 50px;"> Cart </button> 
+          </div>
+        </div>
       </div>
     </div>
   </div>
   <app-navbar></app-navbar>
-  <app-img-background></app-img-background>
+  <img src="assets/images/DrugStore.jpg" class="img-fluid" alt="LogoDrugStore" style="width: 100%;">
+
+

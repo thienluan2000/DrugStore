@@ -1,23 +1,36 @@
 
- <a class="nav-link active bi bi-list" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"> Danh mục sản phẩm </a>
+ <a class="nav-link active bi bi-list" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"> Menu </a>
   <div class="collapse" id="collapseExample">
     <div class=" p-2 bd-highlight bg-info">
       <ul class=" navbar-nav flex-column fw-bold px-2">
         <li class="nav-item">
-          <a class="nav-link active bi bi-bandaid" href="#"> Thuốc </a>
+          <a class="nav-link active bi bi-bandaid" href="#"> Medicine </a>
         </li>
        <li class="nav-item">
-          <a class="nav-link active bi bi-archive" href="#"> Thực phẩm bổ sung </a>
+          <a class="nav-link active bi bi-archive" href="#"> Food supplement </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active bi bi-ticket" href="#"> Khẩu trang </a>
+          <a class="nav-link active bi bi-ticket" href="#"> Mask </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link active bi bi-eyedropper" href="#"> Dụng cụ y tế </a>
+            <a class="nav-link active bi bi-eyedropper" href="#"> Medical instruments  </a>
           </li>
         <li class="nav-item">
-          <a class="nav-link active bi bi-telephone" href="#"> Liên hệ tư vấn </a>
+          <a class="nav-link active bi bi-telephone" href="#"> Contact </a>
         </li>
       </ul>
     </div>
   </div>
+
+<!-- <mat-sidenav-container class="full-height" autosize="true">
+    <mat-sidenav mode="side" opened (click)="toggleSidebar()">
+        <div mat-menu-item *ngFor="let i of sideMenu" [routerLink]="['/', i.route]" class="with-icon padded" (click)="$event.stopPropagation()">
+            <mat-icon [matTooltip]="i.toolTip">{{ i.icon }}</mat-icon>&nbsp;
+            <span [hidden]="collapse">{{ i.name }}</span>
+        </div>
+    </mat-sidenav>
+
+    <mat-sidenav-content class="padded">
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container> -->
