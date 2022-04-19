@@ -1,5 +1,7 @@
 import { Component, EventEmitter } from '@angular/core';
 import { Product } from './product.model';
+
+
 @Component({
   selector: 'drugstore-app-root',
   templateUrl: './app.component.html',

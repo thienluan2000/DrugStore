@@ -1,0 +1,27 @@
+.sidebar {
+    background: #0dcaf0;
+    color: white;
+    height: 100%;
+    width: 0px;
+    position: fixed; 
+    left: 60px;
+    overflow-x: hidden;
+    transition: 0.5s; 
+ }
+ .showsidebar {
+    width: 270px;
+ }
+ .hidesidebar {
+    width: 0px;
+ }
+ .showicon{
+    background: #0dcaf0;
+    color: white;
+    height: 100%;
+    width: 70px;
+    text-align: center;
+    position: fixed; 
+    left: 0;
+    
+    transition: 0.5s; 
+ }

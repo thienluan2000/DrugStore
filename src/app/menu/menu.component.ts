@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { menuList } from './menu-list';
+import { Component, OnInit ,HostListener,ElementRef} from '@angular/core';
+
 
 @Component({
   selector: 'app-menu',
@@ -7,14 +7,48 @@ import { menuList } from './menu-list';
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit {
-  sideMenu  = menuList;
-  collapse = false;
-  constructor() { }
 
-  ngOnInit(): void {
+  
+  isMenuSmall:boolean = true;
+  sideBarOpen: boolean = false;
+  constructor(private el:ElementRef) { }
+  
+
+  // Your initial click listener on the host element
+ @HostListener('click', ['$event'])onClick(event:any) {
+  event.stopPropagation();
+if (event.target.id == "collapseBtn") {
+  document.getElementsByClassName('sidebar')[0].classList.add('showsidebar');
+  document.body.classList.add('push');
+  this.sideBarOpen = true;
+} else {
+if (this.sideBarOpen) {
+   document.getElementsByClassName('sidebar')[0].classList.remove('showsidebar');
+   document.body.classList.remove('push');
+   this.sideBarOpen = false;
+}
+}
+}
+
+// Click listener on the window object to handle clicks anywhere on 
+// the screen.
+@HostListener('window:click', ['$event']) onOutsideClick(event:any){
+if(this.sideBarOpen && !this.el.nativeElement.contains(event.target)){
+  this.sideBarOpen=false;
+  document.getElementsByClassName('sidebar')[0].classList.remove('showsidebar');
+  document.body.classList.remove('push');
+}
+}
+
+  ngOnInit() {
   }
 
-  toggleSidebar() {
-    this.collapse = !this.collapse;
-  }
+  toggleSideBar() {
+    document.getElementsByClassName('sidebar')[0].classList.add('showsidebar');
+    this.sideBarOpen = true;
+ }
+
+  // toggleSidebar() {
+  //   this.collapse = !this.collapse;
+  // }
 }
