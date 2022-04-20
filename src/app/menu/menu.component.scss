@@ -1,5 +1,5 @@
 .sidebar {
-    background: #0dcaf0;
+    background: rgb(32, 180, 56);
     color: white;
     height: 375px;
     width: 0px;
@@ -15,12 +15,18 @@
     width: 0px;
  }
  .showicon{
-    background: #0dcaf0;
+    background: rgb(32, 180, 56);
     color: white;
-    height: 367px;
+    height: 375px;
     width: 70px;
     text-align: center;
     position: fixed; 
     left: 0;
     transition: 0.5s; 
+ }
+
+
+ 
+ body.push {
+   left:250px;
  }
