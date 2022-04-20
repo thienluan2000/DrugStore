@@ -1,5 +1,5 @@
 <h1 class="title">Menu List</h1>
-<div class="card list-group list-group-horizontal-md ">
+<div class=" list-group list-group-horizontal-md ">
     <product-col
     *ngFor="let myProduct of productList"
     [product]="myProduct"
@@ -7,3 +7,5 @@
     [class.selected]="isSelected(myProduct)">
     </product-col>
 </div>
+
+
