@@ -25,4 +25,7 @@ export class ProductsListComponent {
     return product.name === this.currentProduct.name;
     }
 
+  sortedProducts(): Product[] {
+  return this.productList.sort((a: Product, b: Product) => a.price - b.price);
+  }
 }

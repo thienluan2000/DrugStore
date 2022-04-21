@@ -13,7 +13,7 @@ export class AppComponent {
 
   //pagination parameters
   p: number = 1;
-  count: number = 3;
+  count: number = 9;
 
 
   constructor(){

@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { FormsModule } from '@angular/forms';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +18,7 @@ import { ProductClassifyComponent } from './product-classify/product-classify.co
 
 @NgModule({
   declarations: [
+    
     AppComponent,
     HeaderComponent,
     SearchBarComponent,
@@ -31,7 +34,9 @@ import { ProductClassifyComponent } from './product-classify/product-classify.co
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    Ng2SearchPipeModule,
+    FormsModule
  
   ],
   providers: [],
