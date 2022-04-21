@@ -11,6 +11,11 @@ export class AppComponent {
   title = 'DrugStore';
   products : Product[];
 
+  //pagination parameters
+  p: number = 1;
+  count: number = 3;
+
+
   constructor(){
     this.products=[
       new Product(

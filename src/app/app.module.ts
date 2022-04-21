@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { NgxPaginationModule } from 'ngx-pagination';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,12 +25,13 @@ import { ProductClassifyComponent } from './product-classify/product-classify.co
     ProductColComponent,
     ProductImageComponent,
     PriceDisplayComponent,
-    ProductClassifyComponent
+    ProductClassifyComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
- 
+    NgxPaginationModule
  
   ],
   providers: [],

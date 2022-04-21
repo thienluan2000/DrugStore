@@ -1,7 +1,7 @@
 <h1 class="title">Menu List</h1>
 <div class=" list-group list-group-horizontal-md ">
     <product-col
-    *ngFor="let myProduct of productList"
+    *ngFor="let myProduct of productList "
     [product]="myProduct"
     (click)='clicked(myProduct)'
     [class.selected]="isSelected(myProduct)">
