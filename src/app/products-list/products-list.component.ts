@@ -16,6 +16,7 @@ export class ProductsListComponent {
   clicked(product: Product): void {
     this.currentProduct = product;
     this.onProductSelected.emit(product);
+    
   }
 
   isSelected(product: Product): boolean {

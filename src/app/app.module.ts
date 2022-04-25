@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { FormsModule } from '@angular/forms';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +16,8 @@ import { ProductColComponent } from './product-col/product-col.component';
 import { ProductImageComponent } from './product-image/product-image.component';
 import { PriceDisplayComponent } from './price-display/price-display.component';
 import { ProductClassifyComponent } from './product-classify/product-classify.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -29,15 +32,20 @@ import { ProductClassifyComponent } from './product-classify/product-classify.co
     ProductImageComponent,
     PriceDisplayComponent,
     ProductClassifyComponent,
+    ProductDetailsComponent,
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgxPaginationModule,
+    FormsModule,
     Ng2SearchPipeModule,
-    FormsModule
- 
+    ReactiveFormsModule,
+    RouterModule.forRoot([
+      {path: 'http://localhost:4200/',component:ProductsListComponent},
+      {path: 'product/:productId',component:ProductDetailsComponent},
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
