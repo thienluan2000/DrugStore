@@ -7,18 +7,18 @@ import { Product } from '../product.model';
  
 })
 export class ProductDetailsComponent  {
-  @Input() product!: Product;
-  //@Input() productList!: Product[];
+  @Input() product!: Product|undefined;
+  @Input() productList!: Product[];
   @HostBinding('attr.class') cssClass = 'item';
-  constructor() { }
+  constructor(private route: ActivatedRoute) { }
 
-  //ngOnInit(): void {
-  //   // First get the product id from the current route.
-  // const routeParams = this.route.snapshot.paramMap;
-  // const productIdFromRoute = Number(routeParams.get('productId'));
+  ngOnInit(): void {
+    // First get the product id from the current route.
+  const routeParams = this.route.snapshot.paramMap;
+  const productIdFromRoute = Number(routeParams.get('productId'));
 
-  // // Find the product that correspond with the id provided in route.
-  //   this.product = this.productList.find(product => product.id === productIdFromRoute);
-  // }
+  // Find the product that correspond with the id provided in route.
+    this.product = this.productList.find(product => product.id === productIdFromRoute);
+  }
 
 }
