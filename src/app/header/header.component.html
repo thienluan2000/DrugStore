@@ -1,23 +1,26 @@
 <!-- This is header component-->
-<div class="container-fluid p-1 bg-primary">
+<div class="container-fluid  bg-primary">
     <div class="row">
-      <div class="col">
-        <img src="assets/images/logo.png" class="img-fluid thumbnail-border-width mt-2 ps-2" alt="LogoDrugStore">
+      <div class="col ">
+        <img src="assets/images/logo.png" class="img-fluid thumbnail-border-width mt-2 ps-1" alt="LogoDrugStore">
       </div>
       <div class="col">
         <app-search-bar></app-search-bar>
       </div>
-      <div class="col">
+      <div class="col container">
         <div class="row">
           <div class="col"> 
-            <button  type="button" class="bi bi-person btn bg-light text-nowrap btn-lg" style="margin-top: 50px;"> Sign in</button>
+            <button  type="button" class="bi bi-person btn  text-nowrap btn-header "> Sign in</button>
           </div>
           <div class="col"> 
-            <button type="button" class="bi bi-person-plus btn bg-light text-nowrap btn-lg" style="margin-top:50px;"> Sign Up</button>  
+            <button type="button" class="bi bi-person-plus btn text-nowrap btn-header"> Sign Up</button>  
           </div>
           <div class="col"> 
-            <button type="button" class="bi bi-cart-dash btn bg-light text-nowrap btn-lg" style="margin-top: 50px;"> Cart </button> 
-          </div>
+            <button type="button" class="bi bi-bag-dash btn text-nowrap btn-header"> Cart </button> 
+          </div>  
+          <div class="col"> 
+            <button type="button" class="bi bi-telephone btn text-nowrap btn-header"> Contact </button> 
+          </div>  
         </div>
       </div>
     </div>
