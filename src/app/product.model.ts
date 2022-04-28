@@ -5,5 +5,7 @@ export class Product{
         public imageUrl : string,
         public price : number,
         public classify : string[]
-    ){}
+    ){
+        
+    }
 }

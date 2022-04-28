@@ -1,8 +1,7 @@
-.title{
-    background-color:#0dcaf0 ;
-    color: whitesmoke ;
-    text-align: center;
-    text-transform: uppercase;
-    margin-top: 10px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
+
+.break {
+    display: flex;
+    flex-flow: row wrap;
+    margin-top:25px ;
+    margin-bottom: 25px;
+  }

@@ -1,4 +1,9 @@
 <app-header></app-header>
+<!-- <menu></menu>
+<img>
+<content>
+  <router-outlet></router-outlet>
+</content> -->
 <div class="drugstore-app ">
     <products-list
     [productList]="products| paginate: { itemsPerPage: count, currentPage: p }"
@@ -9,4 +14,4 @@
     <pagination-controls (pageChange)="p = $event"></pagination-controls>
   </div>
   
-<router-outlet></router-outlet>
+

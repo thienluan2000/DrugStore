@@ -21,7 +21,7 @@ import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
-    
+
     AppComponent,
     HeaderComponent,
     SearchBarComponent,
@@ -43,8 +43,8 @@ import { RouterModule } from '@angular/router';
     Ng2SearchPipeModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
-      {path: 'http://localhost:4200/',component:ProductsListComponent},
-      {path: 'product/:productId',component:ProductDetailsComponent},
+      { path: '', component: ProductsListComponent },
+      { path: 'product/:productId', component: ProductDetailsComponent },
     ])
   ],
   providers: [],
