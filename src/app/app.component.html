@@ -4,14 +4,12 @@
 <content>
   <router-outlet></router-outlet>
 </content> -->
-<div class="drugstore-app ">
-    <products-list
-    [productList]="products| paginate: { itemsPerPage: count, currentPage: p }"
-    (onProductSelected)="productWasSelected($event)">
+<div class="drugstore-app">
+    <products-list [productList]="products| paginate: { itemsPerPage: pageSize, currentPage: selectedPage }"
+        (onProductSelected)="onProductSelected($event)">
     </products-list>
 </div>
-<div class="pagination justify-content-center  ">
-    <pagination-controls (pageChange)="p = $event"></pagination-controls>
-  </div>
-  
 
+<div class="pagination justify-content-center">
+    <pagination-controls (pageChange)="selectedPage = $event"></pagination-controls>
+</div>
