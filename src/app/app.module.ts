@@ -45,7 +45,7 @@ import { HttpClientModule } from '@angular/common/http';
         Ng2SearchPipeModule,
         ReactiveFormsModule,
         RouterModule.forRoot([
-            { path: 'http://localhost:4200/', component: ProductsListComponent },
+            { path: '', component: ProductsListComponent },
             { path: 'product/:productId', component: ProductDetailsComponent },
         ])
     ],

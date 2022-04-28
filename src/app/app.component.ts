@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
 
     //pagination parameters
     public selectedPage: number = 1;
-    public pageSize: number = 9;
+    public pageSize: number = 8;
 
     constructor(
         private productService: ProductService
