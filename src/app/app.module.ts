@@ -44,10 +44,6 @@ import { HttpClientModule } from '@angular/common/http';
         FormsModule,
         Ng2SearchPipeModule,
         ReactiveFormsModule,
-        RouterModule.forRoot([
-            { path: '', component: ProductsListComponent },
-            { path: 'product/:productId', component: ProductDetailsComponent },
-        ])
     ],
     providers: [
         ProductService
