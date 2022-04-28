@@ -1,17 +1,17 @@
-import { Component, Input,HostBinding } from '@angular/core';
-import { Product } from '../product.model';
+import { Component, Input, HostBinding } from '@angular/core';
+import { IProductModel } from '../../models/product.model';
+
 @Component({
-  selector: 'product-image',
-  template: `
-  <img class="card-img-top img-fluid border border-info border-4" [src]="product.imageUrl" style="height: 20rem;">
-  `
+    selector: 'product-image',
+    templateUrl: './product-image.component.html',
 })
 export class ProductImageComponent {
-  @Input() product!: Product;
-  @HostBinding('attr.class') cssClass = 'ui small image';
-  constructor() { }
+    @Input() product!: IProductModel;
+    @HostBinding('attr.class') cssClass = 'ui small image';
 
-  ngOnInit(): void {
-  }
+    constructor() { }
+
+    ngOnInit(): void {
+    }
 
 }

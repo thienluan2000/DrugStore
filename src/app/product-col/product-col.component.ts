@@ -1,13 +1,14 @@
-import { Component,Input,HostBinding  } from '@angular/core';
-import { Product } from '../product.model';
+import { Component, Input, HostBinding } from '@angular/core';
+import { IProductModel } from '../../models/product.model';
 
 @Component({
-  selector: 'product-col',
-  templateUrl: './product-col.component.html',
+    selector: 'product-col',
+    templateUrl: './product-col.component.html',
 })
 export class ProductColComponent {
-  @Input() product!: Product;
-  @HostBinding('attr.class') cssClass = 'item';
-  constructor() { }
+    @Input() product!: IProductModel;
+    @HostBinding('attr.class') cssClass = 'item';
+
+    constructor() { }
 
 }

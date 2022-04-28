@@ -18,36 +18,40 @@ import { PriceDisplayComponent } from './price-display/price-display.component';
 import { ProductClassifyComponent } from './product-classify/product-classify.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { RouterModule } from '@angular/router';
+import { ProductService } from 'src/services/product.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [
-    
-    AppComponent,
-    HeaderComponent,
-    SearchBarComponent,
-    NavbarComponent,
-    MenuComponent,
-    ProductsListComponent,
-    ProductColComponent,
-    ProductImageComponent,
-    PriceDisplayComponent,
-    ProductClassifyComponent,
-    ProductDetailsComponent,
+    declarations: [
+        AppComponent,
+        HeaderComponent,
+        SearchBarComponent,
+        NavbarComponent,
+        MenuComponent,
+        ProductsListComponent,
+        ProductColComponent,
+        ProductImageComponent,
+        PriceDisplayComponent,
+        ProductClassifyComponent,
+        ProductDetailsComponent,
 
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    NgxPaginationModule,
-    FormsModule,
-    Ng2SearchPipeModule,
-    ReactiveFormsModule,
-    RouterModule.forRoot([
-      {path: 'http://localhost:4200/',component:ProductsListComponent},
-      {path: 'product/:productId',component:ProductDetailsComponent},
-    ])
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    ],
+    imports: [
+        BrowserModule,
+        HttpClientModule,
+        AppRoutingModule,
+        NgxPaginationModule,
+        FormsModule,
+        Ng2SearchPipeModule,
+        ReactiveFormsModule,
+        RouterModule.forRoot([
+            { path: 'http://localhost:4200/', component: ProductsListComponent },
+            { path: 'product/:productId', component: ProductDetailsComponent },
+        ])
+    ],
+    providers: [
+        ProductService
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,9 +1,6 @@
 <h1 class="title">Menu List</h1>
 <div class=" list-group list-group-horizontal-md ">
-    <product-col
-    *ngFor="let myProduct of sortedProducts()"
-    [product]="myProduct"
-    (click)='clicked(myProduct)'
-    [class.selected]="isSelected(myProduct)">
+    <product-col *ngFor="let item of products" [product]="item" (click)='onClicked(item)'
+        [ngClass]="{'selected': this.currentProduct && this.currentProduct.id === item.id}">
     </product-col>
 </div>

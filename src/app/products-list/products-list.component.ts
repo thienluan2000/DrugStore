@@ -1,32 +1,28 @@
-import { Component, EventEmitter,Input,Output } from '@angular/core';
-import { Product } from '../product.model';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { IProductModel } from '../../models/product.model';
 @Component({
-  selector: 'products-list',
-  templateUrl: './products-list.component.html',
-  styleUrls: ['./products-list.component.scss']
+    selector: 'products-list',
+    templateUrl: './products-list.component.html',
+    styleUrls: ['./products-list.component.scss']
 })
 export class ProductsListComponent {
+    public products: IProductModel[] = [];
+    public currentProduct: IProductModel | null = null;
 
-  @Input() productList!: Product[];
-  @Output() onProductSelected!: EventEmitter<Product>;
-  private currentProduct! : Product;
-  constructor() {
-    this.onProductSelected = new EventEmitter();
-   }
-  clicked(product: Product): void {
-    this.currentProduct = product;
-    this.onProductSelected.emit(product);
-    
-  }
-
-  isSelected(product: Product): boolean {
-    if (!product || !this.currentProduct) {
-    return false;
-    }
-    return product.name === this.currentProduct.name;
+    @Input('productList') set Data(value: IProductModel[]) {
+        if (value && value.length > 0) {
+            this.products = value.sort((a: IProductModel, b: IProductModel) => a.price - b.price);
+        }
     }
 
-  sortedProducts(): Product[] {
-  return this.productList.sort((a: Product, b: Product) => a.price - b.price);
-  }
+    @Output() onProductSelected!: EventEmitter<IProductModel>;
+
+    constructor() {
+        this.onProductSelected = new EventEmitter();
+    }
+
+    public onClicked(product: IProductModel): void {
+        this.currentProduct = product;
+        this.onProductSelected.emit(product);
+    }
 }

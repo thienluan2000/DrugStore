@@ -1,12 +1,13 @@
 <app-header></app-header>
+
 <div class="drugstore-app ">
-    <products-list
-    [productList]="products| paginate: { itemsPerPage: count, currentPage: p }"
-    (onProductSelected)="productWasSelected($event)">
+    <products-list [productList]="products| paginate: { itemsPerPage: pageSize, currentPage: selectedPage }"
+        (onProductSelected)="onProductSelected($event)">
     </products-list>
 </div>
+
 <div class="pagination justify-content-center  ">
-    <pagination-controls (pageChange)="p = $event"></pagination-controls>
-  </div>
-  
+    <pagination-controls (pageChange)="selectedPage = $event"></pagination-controls>
+</div>
+
 <router-outlet></router-outlet>
