@@ -25,4 +25,6 @@ export class ProductsListComponent {
         this.currentProduct = product;
         this.onProductSelected.emit(product);
     }
+
+    
 }
