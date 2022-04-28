@@ -30,9 +30,5 @@ export class AppComponent implements OnInit {
     public onProductSelected(product: IProductModel): void {
         console.log('Product clicked: ', product);
     }
-
-    public getProductList() {
-
-    }
 }
 
