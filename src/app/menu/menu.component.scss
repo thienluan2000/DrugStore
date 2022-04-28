@@ -1,32 +1,37 @@
 .sidebar {
-    background: rgb(32, 180, 56);
-    color: white;
-    height: 375px;
-    width: 0px;
-    position: fixed; 
-    left: 50px;
-    overflow-x: hidden;
-    transition: 0.5s; 
- }
- .showsidebar {
-    width: 250px;
- }
- .hidesidebar {
-    width: 0px;
- }
- .showicon{
-    background: rgb(32, 180, 56);
-    color: white;
-    height: 375px;
-    width: 70px;
-    text-align: center;
-    position: fixed; 
-    left: 0;
-    transition: 0.5s; 
- }
+   background: rgb(42, 204, 69);
+   color: white;
+   height: 375px;
+   width: 0px;
+   position: absolute;
+   left: 50px;
+   margin-top: 8px;
+   overflow-x: hidden;
+   transition: 0.5s;
+}
+
+.showsidebar {
+   width: 250px;
+}
+
+.hidesidebar {
+   width: 0px;
+}
+
+.showicon {
+   background: rgb(42, 204, 69);
+   color: white;
+   height: 375px;
+   width: 70px;
+   text-align: center;
+   left: 0;
+   margin-top: 8px;
+   transition: 0.5s;
+   position: absolute;
+}
 
 
- 
- body.push {
-   left:250px;
- }
+
+body.push {
+   left: 250px;
+}
