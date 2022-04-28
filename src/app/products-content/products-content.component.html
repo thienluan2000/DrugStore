@@ -1,0 +1,10 @@
+<div class="background">
+    <div class="drugstore-app" >
+        <products-list [productList]="products| paginate: { itemsPerPage: pageSize, currentPage: selectedPage }"
+            (onProductSelected)="onProductSelected($event)">
+        </products-list>
+    </div>
+    <div class="pagination justify-content-center">
+        <pagination-controls (pageChange)="selectedPage = $event"></pagination-controls>
+    </div>
+</div>

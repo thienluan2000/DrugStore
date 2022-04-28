@@ -1,9 +1,8 @@
 <div class="container-fluid">
     <div class="row ">
-        <div class="col py-2 px-4 ms-4">
-            <div class="card product " routerLink="product/{{product.id}}">
+        <div class="col py-2 px-4 ms-4 mt-4">
+            <div class="card product " routerLink="product/{{product.id}}"  >
                 <product-image [product]="product"></product-image>
-
                 <div class="card-body text-center">
                     <div class="content">
                         <div class="header text-uppercase"> {{ product.name }}</div>

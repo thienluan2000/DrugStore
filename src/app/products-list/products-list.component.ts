@@ -6,6 +6,7 @@ import { IProductModel } from '../../models/product.model';
     styleUrls: ['./products-list.component.scss']
 })
 export class ProductsListComponent {
+    @Input() product!: IProductModel;
     public products: IProductModel[] = [];
     public currentProduct: IProductModel | null = null;
 

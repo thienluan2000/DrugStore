@@ -2,14 +2,16 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { IProductModel } from 'src/models/product.model';
+import { ActivatedRoute } from '@angular/router';
 
 @Injectable()
 export class ProductService {
     private products: IProductModel[];
+    private product!: IProductModel|undefined;
     private baseImgUrl: string = '/assets/images';
 
     constructor(
-        private http: HttpClient
+        private http: HttpClient, private route: ActivatedRoute
     ) {
         this.products = [
             {
@@ -159,4 +161,13 @@ export class ProductService {
         // return this.http.get<IProductModel[]>(`/products`);
         return of(this.products);
     }
+
+    routeParams = this.route.snapshot.paramMap;
+    productIdFromRoute = Number(this.routeParams.get('productId'));
+
+    public getProductDetail(): Observable<IProductModel[]> {
+        this.product = this.products.find(product => product.id === this.productIdFromRoute);
+        return of(this.product);
+    }
+
 }

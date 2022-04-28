@@ -17,9 +17,9 @@ import { ProductImageComponent } from './product-image/product-image.component';
 import { PriceDisplayComponent } from './price-display/price-display.component';
 import { ProductClassifyComponent } from './product-classify/product-classify.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
-import { RouterModule } from '@angular/router';
 import { ProductService } from 'src/services/product.service';
 import { HttpClientModule } from '@angular/common/http';
+import { ProductsContentComponent } from './products-content/products-content.component';
 
 @NgModule({
     declarations: [
@@ -34,6 +34,7 @@ import { HttpClientModule } from '@angular/common/http';
         PriceDisplayComponent,
         ProductClassifyComponent,
         ProductDetailsComponent,
+        ProductsContentComponent,
 
     ],
     imports: [
