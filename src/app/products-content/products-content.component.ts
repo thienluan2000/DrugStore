@@ -8,19 +8,23 @@ import { ProductService } from 'src/services/product.service';
 })
 export class ProductsContentComponent implements OnInit {
   public products: IProductModel[] = [];
-   //pagination parameters
+  //pagination parameters
   public selectedPage: number = 1;
   public pageSize: number = 8;
 
-  constructor(  private productService: ProductService) { }
+  constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
     this.productService.getProductList().subscribe(res => {
-        this.products = res;
+      this.products = res;
     });
+
+  
+
+    
   }
 
   public onProductSelected(product: IProductModel): void {
     console.log('Product clicked: ', product);
-}
+  }
 }

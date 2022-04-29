@@ -1,13 +1,16 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable, of, } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { IProductModel } from 'src/models/product.model';
 import { ActivatedRoute } from '@angular/router';
+
+
 
 @Injectable()
 export class ProductService {
     private products: IProductModel[];
-    private product!: IProductModel|undefined;
+    //private product: IProductModel;
     private baseImgUrl: string = '/assets/images';
 
     constructor(
@@ -162,12 +165,16 @@ export class ProductService {
         return of(this.products);
     }
 
-    routeParams = this.route.snapshot.paramMap;
-    productIdFromRoute = Number(this.routeParams.get('productId'));
+    // routeParams = this.route.snapshot.paramMap;
+    // productIdFromRoute = Number(this.routeParams.get('productId'));
 
-    public getProductDetail(): Observable<IProductModel[]> {
-        this.product = this.products.find(product => product.id === this.productIdFromRoute);
-        return of(this.product);
+    // public getProductDetail(): Observable<IProductModel[]> {
+    //     this.product = this.products.find(product => product.id === this.productIdFromRoute);
+    //     return of(this.product);
+    // }
+
+    public getProductDetail(id: number): Observable<IProductModel | null> {
+        const item: IProductModel | null = (this.products.find(x => x.id === id) || null);
+        return of(item);
     }
-
 }
