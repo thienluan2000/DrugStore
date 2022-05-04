@@ -1,4 +1,4 @@
-import { Component, Input, HostBinding } from '@angular/core';
+import { Component, HostBinding, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductService } from 'src/services/product.service';
 import { IProductModel } from '../../models/product.model';
@@ -7,9 +7,10 @@ import { IProductModel } from '../../models/product.model';
     templateUrl: './product-details.component.html',
 
 })
-export class ProductDetailsComponent {
+export class ProductDetailsComponent implements OnInit {
     // @Input() product: IProductModel | undefined;
     // @Input() productList!: IProductModel[];
+    public product!: IProductModel | null;
 
     @HostBinding('attr.class') cssClass = 'item';
 
@@ -21,13 +22,17 @@ export class ProductDetailsComponent {
 
 
         // First get the product id from the current route.
+
         const routeParams = this.route.snapshot.paramMap;
         const productId = Number(routeParams.get('productId'));
 
-        // // Find the product that correspond with the id provided in route.
+        // Find the product that correspond with the id provided in route.
         // this.product = this.productList.find(product => product.id === productIdFromRoute);
+
         this.productService.getProductDetail(productId).subscribe(res => {
             console.log(res);
+            this.product = res;
+
         });
     }
 

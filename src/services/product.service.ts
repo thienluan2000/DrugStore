@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { IProductModel } from 'src/models/product.model';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute ,ParamMap,Router} from '@angular/router';
 
 @Injectable()
 export class ProductService {
