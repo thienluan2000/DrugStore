@@ -167,10 +167,10 @@ export class ProductService {
         return of(item);
     }
 
-    // public searchProduct(name: string):  Observable<IProductModel | null>{
-    //     const item: IProductModel | null = (this.products.find(x => x.name === name) || null);
-    //     return of(item);
-    // }
+    public searchProduct(name: string):  Observable<IProductModel | null>{
+        const item: IProductModel | null = (this.products.find(x => x.name === name) || null);
+        return of(item);
+    }
 
 
     // searchTrack(query: string) {
@@ -181,6 +181,8 @@ export class ProductService {
     //     let queryURL: string = `https://api.spotify.com/v1/search?${params}`;
     //     return this.http.request(queryURL).map(res => res.json());
     //     }
+
+
 }
         
 

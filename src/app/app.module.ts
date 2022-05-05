@@ -4,7 +4,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { FormsModule } from '@angular/forms';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { ReactiveFormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+import { LocationStrategy, HashLocationStrategy, APP_BASE_HREF } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -46,7 +47,8 @@ import { ProductsContentComponent } from './products-content/products-content.co
         FormsModule,
         Ng2SearchPipeModule,
         ReactiveFormsModule,
-        RouterModule
+        RouterModule,
+        
     ],
     providers: [
         ProductService
