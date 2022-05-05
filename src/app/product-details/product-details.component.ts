@@ -8,11 +8,10 @@ import { IProductModel } from '../../models/product.model';
 
 })
 export class ProductDetailsComponent implements OnInit {
-    // @Input() product: IProductModel | undefined;
-    // @Input() productList!: IProductModel[];
     public product!: IProductModel | null;
+    public currentProduct: IProductModel | null = null;
 
-    @HostBinding('attr.class') cssClass = 'item';
+    //@HostBinding('attr.class') cssClass = 'item';
 
     constructor(
         private route: ActivatedRoute,
@@ -31,11 +30,8 @@ export class ProductDetailsComponent implements OnInit {
 
         this.productService.getProductDetail(productId).subscribe(res => {
             console.log(res);
-            this.product = res;
-
+            this.currentProduct = res;
         });
     }
-
-
 
 }

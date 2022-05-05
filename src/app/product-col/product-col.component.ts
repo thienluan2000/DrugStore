@@ -7,10 +7,10 @@ import { IProductModel } from '../../models/product.model';
     styleUrls: ['./product-col.component.scss']
 })
 export class ProductColComponent {
-    @Input() product!: IProductModel;
+    @Input() product!: IProductModel|null;
     @HostBinding('attr.class') cssClass = 'item';
 
     constructor() { }
 
-    
+
 }
