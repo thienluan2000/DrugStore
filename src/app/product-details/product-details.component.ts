@@ -11,8 +11,6 @@ export class ProductDetailsComponent implements OnInit {
     public product!: IProductModel | null;
     public currentProduct: IProductModel | null = null;
 
-    //@HostBinding('attr.class') cssClass = 'item';
-
     constructor(
         private route: ActivatedRoute,
         private productService: ProductService) { }
