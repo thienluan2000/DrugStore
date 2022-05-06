@@ -3,7 +3,7 @@ export interface IProductModel {
     name : string ,
     imageUrl : string,
     price : number,
-    classify : string[]
+    classify : string[],
 }
 
 // export class Product{

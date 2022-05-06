@@ -2,7 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { IProductModel } from 'src/models/product.model';
-import { ActivatedRoute ,ParamMap,Router} from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+import { map } from 'rxjs';
 
 @Injectable()
 export class ProductService {
@@ -173,16 +174,17 @@ export class ProductService {
     }
 
 
-    // searchTrack(query: string) {
-    //     let params: string = [
-    //     `q=${query}`,
-    //     `type=track`
+    // searchTrack(name: string): Observable<IProductModel | null> {
+    //     let params: IProductModel|null = [
+    //         `q=${name}`,
+    //         `type=track`
     //     ].join("&");
     //     let queryURL: string = `https://api.spotify.com/v1/search?${params}`;
-    //     return this.http.request(queryURL).map(res => res.json());
-    //     }
+    //     return this.http.request(queryURL).map((res: any) => res.json());
+    //     return of (params);
+    // }
 
 
 }
-        
+
 
