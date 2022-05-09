@@ -3,6 +3,7 @@ import { IProductModel } from 'src/models/product.model';
 import { ActivatedRoute } from '@angular/router';
 import { ProductService } from 'src/services/product.service';
 
+
 @Component({
   selector: 'app-product-search',
   templateUrl: './product-search.component.html',
@@ -10,8 +11,7 @@ import { ProductService } from 'src/services/product.service';
 })
 export class ProductSearchComponent implements OnInit {
   @Input() product!: IProductModel;
-  public products: IProductModel[] = [];
-  public currentProduct: IProductModel[] = [];
+  @Input() productList!: IProductModel[];
 
   constructor(
     private route: ActivatedRoute,
@@ -23,11 +23,15 @@ export class ProductSearchComponent implements OnInit {
   ngOnInit(): void {
 
 
-    this.productService.getProductList().subscribe(res => {
-      console.log(res);
-      this.currentProduct = res;
-  });
   }
+  public getGlobalSearchList(keyword: string) {
+    this.productList = [];
+    this.productService.getProductList().subscribe(value => {
+        this.productList = value.filter((v) => v.name.toLowerCase().indexOf(keyword.toLowerCase()) > -1)
+    });
+    console.log(this.productList);
+    return this.productList;
+}
 
 
 

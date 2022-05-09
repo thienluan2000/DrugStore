@@ -8,7 +8,7 @@ import { IProductModel } from '../../models/product.model';
 
 })
 export class ProductDetailsComponent implements OnInit {
-    public product!: IProductModel | null;
+   // public product!: IProductModel | null;
     public currentProduct: IProductModel | null = null;
 
     constructor(
