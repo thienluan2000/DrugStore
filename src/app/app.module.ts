@@ -23,6 +23,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 import { ProductService } from 'src/services/product.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductsContentComponent } from './products-content/products-content.component';
+import { ProductSearchComponent } from './product-search/product-search.component';
 
 @NgModule({
     declarations: [
@@ -38,6 +39,7 @@ import { ProductsContentComponent } from './products-content/products-content.co
         ProductClassifyComponent,
         ProductDetailsComponent,
         ProductsContentComponent,
+        ProductSearchComponent,
 
     ],
     imports: [
