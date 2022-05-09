@@ -1,5 +1,5 @@
 <div class=" list-group list-group-horizontal-md break">
-    <product-col *ngFor="let item of products" [product]="item" (click)='onClicked(item)' 
-        [ngClass]="{'selected': this.currentProduct && this.currentProduct.id === item.id}">
+    <h1>Searched List</h1>
+    <product-col *ngFor="let item of products" [product]="item" >
     </product-col>
 </div>
