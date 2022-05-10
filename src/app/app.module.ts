@@ -24,6 +24,7 @@ import { ProductService } from 'src/services/product.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductsContentComponent } from './products-content/products-content.component';
 import { ProductSearchComponent } from './product-search/product-search.component';
+import { ProductSearchlistComponent } from './product-searchlist/product-searchlist.component';
 
 @NgModule({
     declarations: [
@@ -40,6 +41,7 @@ import { ProductSearchComponent } from './product-search/product-search.componen
         ProductDetailsComponent,
         ProductsContentComponent,
         ProductSearchComponent,
+        ProductSearchlistComponent,
 
     ],
     imports: [

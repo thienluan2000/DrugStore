@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable,Input } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { IProductModel } from 'src/models/product.model';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
@@ -7,6 +7,7 @@ import { map } from 'rxjs';
 
 @Injectable()
 export class ProductService {
+    @Input() productList!: IProductModel[];
     public products: IProductModel[];
     //public product: IProductModel;
     private baseImgUrl: string = '/assets/images';
@@ -168,7 +169,14 @@ export class ProductService {
         return of(item);
     }
 
-
+    public getGlobalSearchList(keyword: string) {
+        this.productList = [];
+        this.getProductList().subscribe(value => {
+            this.productList = value.filter((v) => v.name.toLowerCase().indexOf(keyword.toLowerCase()) > -1)
+        });
+        console.log(this.productList);
+        return of(this.productList);
+    }
 }
 
 

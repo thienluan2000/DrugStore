@@ -10,11 +10,10 @@ import { ProductService } from 'src/services/product.service';
   styleUrls: ['./product-search.component.scss']
 })
 export class ProductSearchComponent implements OnInit {
-  @Input() product!: IProductModel;
+  public product!: IProductModel;
   @Input() productList!: IProductModel[];
 
   constructor(
-    private route: ActivatedRoute,
     private productService: ProductService
   ) {
 
@@ -24,14 +23,6 @@ export class ProductSearchComponent implements OnInit {
 
 
   }
-  public getGlobalSearchList(keyword: string) {
-    this.productList = [];
-    this.productService.getProductList().subscribe(value => {
-        this.productList = value.filter((v) => v.name.toLowerCase().indexOf(keyword.toLowerCase()) > -1)
-    });
-    console.log(this.productList);
-    return this.productList;
-}
 
 
 
