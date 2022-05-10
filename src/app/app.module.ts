@@ -2,10 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { FormsModule } from '@angular/forms';
-import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
-import { LocationStrategy, HashLocationStrategy, APP_BASE_HREF } from '@angular/common';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -23,7 +21,6 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 import { ProductService } from 'src/services/product.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductsContentComponent } from './products-content/products-content.component';
-import { ProductSearchComponent } from './product-search/product-search.component';
 import { ProductSearchlistComponent } from './product-searchlist/product-searchlist.component';
 
 @NgModule({
@@ -40,7 +37,6 @@ import { ProductSearchlistComponent } from './product-searchlist/product-searchl
         ProductClassifyComponent,
         ProductDetailsComponent,
         ProductsContentComponent,
-        ProductSearchComponent,
         ProductSearchlistComponent,
 
     ],
@@ -50,7 +46,6 @@ import { ProductSearchlistComponent } from './product-searchlist/product-searchl
         AppRoutingModule,
         NgxPaginationModule,
         FormsModule,
-        Ng2SearchPipeModule,
         ReactiveFormsModule,
         RouterModule,
         

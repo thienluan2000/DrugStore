@@ -10,19 +10,29 @@ import { ActivatedRoute } from '@angular/router';
 export class ProductSearchlistComponent implements OnInit {
   public products: IProductModel[] = [];
   constructor(private productService: ProductService,
-    private route: ActivatedRoute,) { }
+    private route: ActivatedRoute,) {
+    console.log(location.search);
+  }
 
   ngOnInit(): void {
 
-    const routeParams = this.route.snapshot.paramMap;
-    const keyword = String(routeParams.get('keyword'));
+    // const routeParams = this.route.snapshot.queryParamMap;
+    // const searchKeywords = String(routeParams.get('searchKeywords'));
 
-    this.productService.getGlobalSearchList(keyword).subscribe(res => {
-      this.products = res;
-    });
+    // this.productService.getGlobalSearchList(searchKeywords).subscribe(res => {
+    //   console.log();
+    //   this.products = res;
+    // });
+
+
+    //focus on this
+    // getGlobalSearchList(): void {
+    //   const key = +this.route.snapshot.queryParamMap.get("key");
+    //   this.productService.getGlobalSearchList()
+    //     .subscribe(res => this.products = res.filter((el, index) => index < key ? key : res.length + 1));
+    // }
 
 
   }
-
 
 }

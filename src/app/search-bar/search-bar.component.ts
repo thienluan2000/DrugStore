@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { IProductModel } from '../../models/product.model';
 import { ProductService } from 'src/services/product.service';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-search-bar',
@@ -12,7 +13,8 @@ export class SearchBarComponent implements OnInit {
     searchKeywords!: string;
 
     constructor(
-        private productService: ProductService) {
+        private productService: ProductService,
+        private router: Router) {
     }
 
 
@@ -22,7 +24,9 @@ export class SearchBarComponent implements OnInit {
     }
 
     public doSearch() {
-        this.productService.getGlobalSearchList(this.searchKeywords);
+        // this.productService.getGlobalSearchList(this.searchKeywords);
+        this.router.navigate(['/productSearched'], {queryParams: {key: this.searchKeywords}});
+
     }
 
 }

@@ -3,7 +3,7 @@ import { Injectable,Input } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { IProductModel } from 'src/models/product.model';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
-import { map } from 'rxjs';
+
 
 @Injectable()
 export class ProductService {
