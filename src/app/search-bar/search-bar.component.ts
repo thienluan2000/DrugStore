@@ -10,23 +10,19 @@ import { Router } from '@angular/router';
 })
 export class SearchBarComponent implements OnInit {
     @Input() productList!: IProductModel[];
-    searchKeywords!: string;
+    public searchKeywords!: string;
 
     constructor(
         private productService: ProductService,
         private router: Router) {
     }
-
-
     ngOnInit(): void {
-
 
     }
 
     public doSearch() {
         // this.productService.getGlobalSearchList(this.searchKeywords);
-        this.router.navigate(['/productSearched'], {queryParams: {key: this.searchKeywords}});
-
+        this.router.navigate(['/productSearched'], { queryParams: { key: this.searchKeywords } });
     }
 
 }

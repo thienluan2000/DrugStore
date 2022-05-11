@@ -16,22 +16,13 @@ export class ProductSearchlistComponent implements OnInit {
 
   ngOnInit(): void {
 
-    // const routeParams = this.route.snapshot.queryParamMap;
-    // const searchKeywords = String(routeParams.get('searchKeywords'));
+    console.log(this.route.snapshot.queryParamMap.get('key'));
+    const searchKeywords = String(this.route.snapshot.queryParamMap.get('key'));
 
-    // this.productService.getGlobalSearchList(searchKeywords).subscribe(res => {
-    //   console.log();
-    //   this.products = res;
-    // });
-
-
-    //focus on this
-    // getGlobalSearchList(): void {
-    //   const key = +this.route.snapshot.queryParamMap.get("key");
-    //   this.productService.getGlobalSearchList()
-    //     .subscribe(res => this.products = res.filter((el, index) => index < key ? key : res.length + 1));
-    // }
-
+    this.productService.getGlobalSearchList(searchKeywords).subscribe(res => {
+      console.log();
+      this.products = res;
+    });
 
   }
 
