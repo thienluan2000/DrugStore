@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable,Input } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { IProductModel } from 'src/models/product.model';
-import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Injectable()
@@ -162,11 +162,13 @@ export class ProductService {
     public getProductList(): Observable<IProductModel[]> {
         // return this.http.get<IProductModel[]>(`/products`);
         return of(this.products);
+        
     }
 
     public getProductDetail(id: number): Observable<IProductModel | null> {
         const item: IProductModel | null = (this.products.find(x => x.id === id) || null);
         return of(item);
+        
     }
 
     public getGlobalSearchList(keyword: string) {

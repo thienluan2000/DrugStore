@@ -1,4 +1,4 @@
-import { Component, Input, HostBinding } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { IProductModel } from '../../models/product.model';
 
 @Component({
@@ -8,7 +8,6 @@ import { IProductModel } from '../../models/product.model';
 })
 export class ProductColComponent {
     @Input() product!: IProductModel|null;
-    @HostBinding('attr.class') cssClass = 'item';
 
     constructor() { }
 
