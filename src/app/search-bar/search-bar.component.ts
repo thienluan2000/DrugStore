@@ -22,7 +22,7 @@ export class SearchBarComponent implements OnInit {
 
     public doSearch() {
         // this.productService.getGlobalSearchList(this.searchKeywords);
-        this.router.navigate(['/productSearched'], { queryParams: { key: this.searchKeywords } });
+        this.router.navigate(['/'], { queryParams: { key: this.searchKeywords } });
     }
 
 }

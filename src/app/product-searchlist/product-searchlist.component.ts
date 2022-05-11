@@ -19,7 +19,7 @@ export class ProductSearchlistComponent implements OnInit {
     console.log(this.route.snapshot.queryParamMap.get('key'));
     const searchKeywords = String(this.route.snapshot.queryParamMap.get('key'));
 
-      this.productService.getGlobalSearchList(searchKeywords).subscribe(res => {
+    this.productService.getList(searchKeywords).subscribe(res => {
       console.log();
       this.products = res;
     });

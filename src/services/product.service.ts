@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable,Input } from '@angular/core';
+import { Injectable, Input } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { IProductModel } from 'src/models/product.model';
 import { ActivatedRoute } from '@angular/router';
@@ -162,13 +162,13 @@ export class ProductService {
     public getProductList(): Observable<IProductModel[]> {
         // return this.http.get<IProductModel[]>(`/products`);
         return of(this.products);
-        
+
     }
 
     public getProductDetail(id: number): Observable<IProductModel | null> {
         const item: IProductModel | null = (this.products.find(x => x.id === id) || null);
         return of(item);
-        
+
     }
 
     public getGlobalSearchList(keyword: string) {
@@ -179,6 +179,22 @@ export class ProductService {
         console.log(this.productList);
         return of(this.productList);
     }
+
+    public getList(keyword: string | null): Observable<IProductModel[]> {
+        
+        if (keyword === null || keyword === '') {
+            return of(this.products);
+        }
+        else {
+            // this.productList = [];
+            // this.getProductList().subscribe(value => {
+            //     this.productList = value.filter((v) => v.name.toLowerCase().indexOf(keyword.toLowerCase()) > -1)
+            // });
+            const products = this.products.filter((v) => v.name.toLowerCase().indexOf(keyword.toLowerCase()) > -1);
+            return of(products);
+        }
+    }
+
 }
 
 
