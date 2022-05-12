@@ -16,12 +16,6 @@ export class ProductsContentComponent implements OnInit {
   constructor(private productService: ProductService, private route: ActivatedRoute,) { }
 
   ngOnInit(): void {
-
-    // this.productService.getProductList().subscribe(res => {
-    //   this.products = res;
-    // });
-
-
     console.log(this.route.snapshot.queryParamMap.get('key'));
     const searchKeywords = this.route.snapshot.queryParamMap.get('key');
     console.log(searchKeywords);

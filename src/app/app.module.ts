@@ -21,7 +21,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 import { ProductService } from 'src/services/product.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductsContentComponent } from './products-content/products-content.component';
-import { ProductSearchlistComponent } from './product-searchlist/product-searchlist.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
     declarations: [
@@ -37,7 +37,8 @@ import { ProductSearchlistComponent } from './product-searchlist/product-searchl
         ProductClassifyComponent,
         ProductDetailsComponent,
         ProductsContentComponent,
-        ProductSearchlistComponent,
+        FooterComponent,
+       
 
     ],
     imports: [
