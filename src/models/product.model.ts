@@ -4,6 +4,7 @@ export interface IProductModel {
     imageUrl : string,
     price : number,
     classify : string[],
+    des : string
 }
 
 // export class Product{

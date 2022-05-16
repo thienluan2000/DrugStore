@@ -9,6 +9,7 @@ import { IProductModel } from '../../models/product.model';
 })
 export class ProductDetailsComponent implements OnInit {
     public selectedProduct: IProductModel | null = null;
+   
 
     constructor(
         private route: ActivatedRoute,

@@ -1,13 +1,32 @@
-.background{
-    background-color: rgb(214, 232, 243);
-}
-.classify{
+.classify {
     color: rgb(47, 21, 117);
     text-transform: uppercase;
-   
+
 }
 
-.img{
-    height: 100%;
-    position: absolute;
+
+.row {
+    height: 500px;
+}
+
+.p {
+    font-size: 25px;
+    font-weight: 100;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+.h1 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 150;
+
+}
+
+.logo {
+    height: 6rem;
+    width: 21rem;
+}
+
+.center {
+    text-align: center;
 }
