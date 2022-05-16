@@ -30,7 +30,7 @@ export class ProductService {
                 imageUrl: `${this.baseImgUrl}/mask.jpg`,
                 price: 1,
                 classify: ['Mask', 'Medical mask type 1'],
-                des : 'sdsdsdsdasdsdasdasdasdas'
+                des : 'sdsdsdsdasdsdasdasdasdas '
             },
             {
                 id: 3,
