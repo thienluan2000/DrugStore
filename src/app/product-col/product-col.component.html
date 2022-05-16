@@ -1,6 +1,6 @@
 <div class="container-fluid">
-    <div class="row row-cols-4">
-        <div class="col py-2 px-4 ms-4 mt-4" *ngIf="product">
+    <div class="row">
+        <div class="col-md-3 col-sm-6 col-xs-12 py-2 px-4 ms-4 mt-4" *ngIf="product">
             <div class="card product " routerLink="product/{{product.id}}"  >
                 <product-image [product]="product"></product-image>
                 <div class="card-body text-center">
@@ -22,3 +22,6 @@
         </div>
     </div>
 </div>
+
+
+<!-- https://goclamweb.com/bai-13-lam-web-voi-bootstrap-chia-bo-cuc-va-responsive/ -->
