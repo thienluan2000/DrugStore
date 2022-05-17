@@ -1,7 +1,7 @@
 .sidebar {
    background: rgb(16, 153, 177);
    color: white;
-   height: 375px;
+   height: auto;
    width: 0px;
    position: absolute;
    left: 50px;
@@ -21,7 +21,7 @@
 .showicon {
    background: rgb(16, 153, 177);
    color: white;
-   height: 375px;
+   height: auto;
    width: 70px;
    text-align: center;
    left: 0;
@@ -30,8 +30,23 @@
    position: absolute;
 }
 
-
-
 body.push {
    left: 250px;
 }
+
+// @media only screen and (max-width: 768px) {
+//    .showicon {
+//       //background: rgb(16, 153, 177);
+//       background-color: red;
+//       color: white;
+//       height: auto;
+//       width: 70px;
+//       text-align: center;
+//       float: right;
+//       flex-wrap: nowrap;
+//       margin-top: 8px;
+//       transition: 0.5s;
+//      // position: absolute;
+
+//    }
+// }

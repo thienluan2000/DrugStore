@@ -1,10 +1,10 @@
 <div class=" container-fluid mt-5" *ngIf="selectedProduct">
     <div class="row ">
         <div class="list-group list-group-horizontal-md break">
-            <div class="col-5 border border-info">
+            <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 border border-info">
                 <img class="card-img-top img-fluid " [src]="selectedProduct.imageUrl" style="height: 31rem;">
             </div>
-            <div class="col-7 border ms-4 center">
+            <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 border ms-4 center">
                 <div>
                     <img src="/assets/images/smallLogo.jpg" class="logo">
                 </div>
@@ -23,20 +23,14 @@
                 <div>
                     <price-display [price]="selectedProduct.price" class="p"></price-display>
                 </div>
-                <div class="d-grid gap-2 col-6 mx-auto">
-                    <a href="" class="btn btn-info btn-lg mt-3">Add product to cart  <i class="bi bi-cart2"></i></a>
+                <div class="d-grid gap-2 col-lg-6 mx-auto">
+                    <a href="" class="btn btn-info btn-lg mt-3">Add product to cart <i class="bi bi-cart2"></i></a>
                 </div>
-                <div class="d-grid gap-2 col-6 mx-auto">
-                    <a href="" class="btn btn-danger btn-lg mt-3">back to ProductList Page <i class="bi bi-backspace"></i></a>
+                <div class="d-grid gap-2 col-lg-6 mx-auto">
+                    <a href="" class="btn btn-success btn-lg mt-3">back to ProductList Page <i
+                            class="bi bi-backspace"></i></a>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-
-
-<!-- <div class=" container-fluid">
-    <h1 style="text-align: center;">Details</h1>
-    <product-col [product]="selectedProduct"></product-col>
-</div> -->

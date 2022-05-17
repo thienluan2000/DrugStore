@@ -22,6 +22,8 @@ import { ProductService } from 'src/services/product.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductsContentComponent } from './products-content/products-content.component';
 import { FooterComponent } from './footer/footer.component';
+import { ContactComponent } from './contact/contact.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 @NgModule({
     declarations: [
@@ -38,6 +40,8 @@ import { FooterComponent } from './footer/footer.component';
         ProductDetailsComponent,
         ProductsContentComponent,
         FooterComponent,
+        ContactComponent,
+        SignUpComponent,
        
 
     ],
