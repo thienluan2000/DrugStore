@@ -215,6 +215,11 @@ export class ProductService {
         }
     }
 
+    addToCart(product: IProductModel) {
+      this.products.push(product);
+    }
+
+
 }
 
 

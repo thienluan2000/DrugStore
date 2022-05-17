@@ -24,6 +24,7 @@ import { ProductsContentComponent } from './products-content/products-content.co
 import { FooterComponent } from './footer/footer.component';
 import { ContactComponent } from './contact/contact.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
     declarations: [
@@ -42,6 +43,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
         FooterComponent,
         ContactComponent,
         SignUpComponent,
+        CartComponent,
        
 
     ],

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductService } from 'src/services/product.service';
 import { IProductModel } from '../../models/product.model';
+import { CartService } from 'src/services/cart.service';
 @Component({
     selector: 'app-product-details',
     templateUrl: './product-details.component.html',
@@ -9,11 +10,12 @@ import { IProductModel } from '../../models/product.model';
 })
 export class ProductDetailsComponent implements OnInit {
     public selectedProduct: IProductModel | null = null;
-   
+
 
     constructor(
         private route: ActivatedRoute,
-        private productService: ProductService) { }
+        private productService: ProductService,
+        private cartService : CartService) { }
 
     ngOnInit(): void {
 
@@ -29,5 +31,11 @@ export class ProductDetailsComponent implements OnInit {
             this.selectedProduct = res;
         });
     }
+
+      addToCart(selectedProduct: IProductModel) {
+        this.productService.addToCart(selectedProduct);
+        window.alert('Your product has been added to the cart!');
+
+      }
 
 }
