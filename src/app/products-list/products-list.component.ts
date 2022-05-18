@@ -27,5 +27,5 @@ export class ProductsListComponent {
         this.onProductSelected.emit(product);
     }
 
-    
+
 }

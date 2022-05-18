@@ -1,5 +1,5 @@
 <div class="">
-    <div class="drugstore-app" >
+    <div class="drugstore-app">
         <products-list [productList]="products| paginate: { itemsPerPage: pageSize, currentPage: selectedPage }"
             (onProductSelected)="onProductSelected($event)">
         </products-list>

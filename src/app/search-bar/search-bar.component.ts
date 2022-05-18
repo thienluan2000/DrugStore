@@ -27,8 +27,7 @@ export class SearchBarComponent implements OnInit {
 
   refresh(): void {
     //window.location.reload();
-    if(window.location.pathname == '/')
-    {
+    if (window.location.pathname == '/') {
       window.location.reload();
     }
   }

@@ -15,7 +15,7 @@ export class ProductDetailsComponent implements OnInit {
     constructor(
         private route: ActivatedRoute,
         private productService: ProductService,
-        private cartService : CartService) { }
+        private cartService: CartService) { }
 
     ngOnInit(): void {
 
@@ -32,10 +32,10 @@ export class ProductDetailsComponent implements OnInit {
         });
     }
 
-      addToCart(selectedProduct: IProductModel) {
-        this.productService.addToCart(selectedProduct);
+    addToCart(selectedProduct: IProductModel) {
+        this.cartService.addToCart(selectedProduct);
         window.alert('Your product has been added to the cart!');
 
-      }
+    }
 
 }

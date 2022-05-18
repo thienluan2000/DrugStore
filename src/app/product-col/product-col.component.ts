@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { IProductModel } from '../../models/product.model';
+import { CartService } from 'src/services/cart.service';
 
 @Component({
     selector: 'product-col',
@@ -7,9 +8,14 @@ import { IProductModel } from '../../models/product.model';
     styleUrls: ['./product-col.component.scss']
 })
 export class ProductColComponent {
-    @Input() product!: IProductModel|null;
+    @Input() product!: IProductModel | null;
+    // public selectedProduct: IProductModel | null = null;
+    constructor(private cartService: CartService) { }
+    addToCart(product: IProductModel) {
+        this.cartService.addToCart(product);
+        window.alert('Your product has been added to the cart!');
 
-    constructor() { }
+    }
 
 
 }

@@ -14,7 +14,7 @@ const routes: Routes = [];
     { path: 'product/:productId', component: ProductDetailsComponent },
     { path: 'contact', component: ContactComponent },
     { path: 'signUp', component: SignUpComponent },
-    { path: 'Cart', component: CartComponent }
+    { path: 'cart', component: CartComponent }
 
   ])],
   exports: [RouterModule]
