@@ -22,7 +22,8 @@ export class ProductService {
                 imageUrl: `${this.baseImgUrl}/kittest.jpg`,
                 price: 5,
                 classify: ['Medical instruments', 'Kittest'],
-                des: 'This is kit test covid From USA'
+                des: 'This is kit test covid From USA',
+                quantity: 0,
             },
             {
                 id: 2,
@@ -30,7 +31,8 @@ export class ProductService {
                 imageUrl: `${this.baseImgUrl}/mask.jpg`,
                 price: 1,
                 classify: ['Mask', 'Medical mask type 1'],
-                des: 'This is Mask Famapro VN95 From VietNam '
+                des: 'This is Mask Famapro VN95 From VietNam ',
+                quantity: 0,
             },
             {
                 id: 3,
@@ -38,7 +40,8 @@ export class ProductService {
                 imageUrl: `${this.baseImgUrl}/siro.jpg`,
                 price: 10,
                 classify: ['Medicine', 'Cough medicine'],
-                des: 'This is Siro Prospan from vietnam'
+                des: 'This is Siro Prospan from vietnam',
+                quantity: 0,
             },
             {
                 id: 4,
@@ -46,7 +49,8 @@ export class ProductService {
                 imageUrl: `${this.baseImgUrl}/aspirin.jpg`,
                 price: 4,
                 classify: ['Medicine', 'Headache medicine'],
-                des: 'Aspirin is a headache medicine'
+                des: 'Aspirin is a headache medicine',
+                quantity: 0,
             },
             {
                 id: 5,
@@ -54,7 +58,8 @@ export class ProductService {
                 imageUrl: `${this.baseImgUrl}/eugica.jpg`,
                 price: 7,
                 classify: ['Medicine', 'Cough medicine'],
-                des: 'This is Eugica from USA'
+                des: 'This is Eugica from USA',
+                quantity: 0,
             },
             {
                 id: 6,
@@ -62,7 +67,8 @@ export class ProductService {
                 imageUrl: `${this.baseImgUrl}/eve.jpg`,
                 price: 4,
                 classify: ['Medicine', 'Headache medicine'],
-                des: 'This is evequick from USA'
+                des: 'This is evequick from USA',
+                quantity: 0,
             },
             {
                 id: 7,
@@ -70,7 +76,8 @@ export class ProductService {
                 imageUrl: `${this.baseImgUrl}/panadol.jpg`,
                 price: 6,
                 classify: ['Medicine', 'Headache medicine'],
-                des: 'This is Headache medicine from USA'
+                des: 'This is Headache medicine from USA',
+                quantity: 0,
             },
             {
                 id: 8,
@@ -78,7 +85,8 @@ export class ProductService {
                 imageUrl: `${this.baseImgUrl}/paracetamol.jpg`,
                 price: 8,
                 classify: ['Medicine', 'Headache medicine'],
-                des: 'This is Headache medicine from USA'
+                des: 'This is Headache medicine from USA',
+                quantity: 0,
             },
             {
                 id: 9,
@@ -86,7 +94,8 @@ export class ProductService {
                 imageUrl: `${this.baseImgUrl}/berberin.jpg`,
                 price: 6,
                 classify: ['Medicine', 'Stomach medicine'],
-                des: 'This is Headache Stomach from USA'
+                des: 'This is Headache Stomach from USA',
+                quantity: 0,
             },
             {
                 id: 10,
@@ -94,7 +103,8 @@ export class ProductService {
                 imageUrl: `${this.baseImgUrl}/berocca.jpg`,
                 price: 7,
                 classify: ['Food Supplement', 'effervescent medicine'],
-                des: 'This is Effervesment medicine from USA'
+                des: 'This is Effervesment medicine from USA',
+                quantity: 0,
             },
             {
                 id: 11,
@@ -102,7 +112,8 @@ export class ProductService {
                 imageUrl: `${this.baseImgUrl}/loperamid.jpg`,
                 price: 5,
                 classify: ['Medicine', 'Stomach medicine'],
-                des: 'This is Stomach medicine from USA'
+                des: 'This is Stomach medicine from USA',
+                quantity: 0,
             },
             {
                 id: 12,
@@ -110,7 +121,8 @@ export class ProductService {
                 imageUrl: `${this.baseImgUrl}/myvita.jpg`,
                 price: 3,
                 classify: ['Food Supplement', 'effervescent medicine'],
-                des: 'This is effervescent medicine from USA'
+                des: 'This is effervescent medicine from USA',
+                quantity: 0,
             },
             {
                 id: 13,
@@ -118,7 +130,8 @@ export class ProductService {
                 imageUrl: `${this.baseImgUrl}/strepsils.jpg`,
                 price: 2,
                 classify: ['Food Supplement', 'lozenges'],
-                des: 'This is lozenges from USA'
+                des: 'This is lozenges from USA',
+                quantity: 0,
             },
             {
                 id: 14,
@@ -126,7 +139,8 @@ export class ProductService {
                 imageUrl: `${this.baseImgUrl}/vitaminC.jpg`,
                 price: 2,
                 classify: ['Food Supplement', 'lozenges'],
-                des: 'This is lozenges from USA'
+                des: 'This is lozenges from USA',
+                quantity: 0,
             },
             {
                 id: 15,
@@ -134,7 +148,8 @@ export class ProductService {
                 imageUrl: `${this.baseImgUrl}/gmask.jpg`,
                 price: 1,
                 classify: ['Mask', 'Medical mask type 2'],
-                des: 'This is Medical Mask Type 2 from USA'
+                des: 'This is Medical Mask Type 2 from USA',
+                quantity: 0,
             },
             {
                 id: 16,
@@ -142,7 +157,8 @@ export class ProductService {
                 imageUrl: `${this.baseImgUrl}/busrelmask.jpg`,
                 price: 1,
                 classify: ['Mask', 'Medical mask type 1'],
-                des: 'This is Medical Mask Type 1 from USA'
+                des: 'This is Medical Mask Type 1 from USA',
+                quantity: 0,
             },
             {
                 id: 17,
@@ -150,7 +166,8 @@ export class ProductService {
                 imageUrl: `${this.baseImgUrl}/urevomask.jpg`,
                 price: 1,
                 classify: ['Mask', 'Medical mask type 2'],
-                des: 'This is Medical Mask Type 2 from USA'
+                des: 'This is Medical Mask Type 2 from USA',
+                quantity: 0,
             },
             {
                 id: 18,
@@ -158,7 +175,8 @@ export class ProductService {
                 imageUrl: `${this.baseImgUrl}/wheelchair.jpg`,
                 price: 100,
                 classify: ['Medical Instruments', 'Wheel chair type 1'],
-                des: 'this is Wheel chair black'
+                des: 'this is Wheel chair black',
+                quantity: 0,
             },
             {
                 id: 19,
@@ -166,7 +184,8 @@ export class ProductService {
                 imageUrl: `${this.baseImgUrl}/needle.jpg`,
                 price: 3,
                 classify: ['Medical Instruments', 'Neelde type 1'],
-                des: 'This is a needle'
+                des: 'This is a needle',
+                quantity: 0,
             },
             {
                 id: 20,
@@ -174,7 +193,8 @@ export class ProductService {
                 imageUrl: `${this.baseImgUrl}/crutch.jpg`,
                 price: 3,
                 classify: ['Medical Instruments', 'Crutch'],
-                des: 'This is wood Crutch'
+                des: 'This is wood Crutch',
+                quantity: 0,
             }
         ];
     }

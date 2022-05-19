@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CartService } from 'src/services/cart.service';
 import { IProductModel } from 'src/models/product.model';
 @Component({
@@ -8,7 +8,7 @@ import { IProductModel } from 'src/models/product.model';
 })
 export class CartComponent implements OnInit {
   items = this.cartService.getItems();
-  @Input() item!: IProductModel | null;
+  //@Input() item!: IProductModel | null;
   constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
@@ -19,9 +19,12 @@ export class CartComponent implements OnInit {
     return this.items;
   }
 
-  removeProduct() {
-    this.item = null;
-    return this.items;
+  onProductSelected(product: IProductModel): void {
+    console.log('item clicked: ', product);
+  }
+
+  removeProduct(item: IProductModel) {
+    this.cartService.removeProduct(item);
   }
 
 

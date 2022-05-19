@@ -20,4 +20,10 @@ export class CartService {
   //   return this.items;
   // }
 
+  removeProduct(key: IProductModel) {
+    this.items.forEach((value, index) => {
+      if (value == key) this.items.splice(index, 1);
+    });
+  }
+
 }
