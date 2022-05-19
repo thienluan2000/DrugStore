@@ -1,6 +1,6 @@
 <h1 class="tittle"><span class="badge bg-info rounded-pill"> <i class="bi bi-bag"></i> My Cart</span></h1>
 
-<div class="container-fluid">
+<div class="container-fluid" *ngIf="items ; else elseBlock">
   <div class="row mt-3" *ngFor="let item of items">
     <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12 border">
       <img class="card-img-top img-fluid" [src]="item.imageUrl" style="height: 17rem;">
@@ -29,9 +29,9 @@
   </div>
 </div>
 
-<div class="container-fluid" *ngIf="">
-  <h1>no product in cart</h1>
-</div>
+<ng-template #elseBlock>
+ <h1>dsds</h1>
+</ng-template>
 
 <div class="text-center">
   <a class="btn btn-outline-info btn-md m-3">Pay the Bill <i class="bi bi-currency-dollar"></i></a>
