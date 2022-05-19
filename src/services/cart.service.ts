@@ -8,7 +8,14 @@ export class CartService {
   constructor() { }
 
   addToCart(product: IProductModel) {
-    this.items.push(product);
+    const found = this.items.find(
+      item => item === product
+    );
+    if (found) {
+      product.quantity++;
+    } else {
+      this.items.push(product);
+    }
   }
 
   getItems() {

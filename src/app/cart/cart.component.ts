@@ -19,10 +19,6 @@ export class CartComponent implements OnInit {
     return this.items;
   }
 
-  onProductSelected(product: IProductModel): void {
-    console.log('item clicked: ', product);
-  }
-
   removeProduct(item: IProductModel) {
     this.cartService.removeProduct(item);
   }
