@@ -24,6 +24,7 @@ export class ProductService {
                 classify: ['Medical instruments', 'Kittest'],
                 des: 'This is kit test covid From USA',
                 quantity: 1,
+                totalPrice : 5,
             },
             {
                 id: 2,
@@ -33,6 +34,7 @@ export class ProductService {
                 classify: ['Mask', 'Medical mask type 1'],
                 des: 'This is Mask Famapro VN95 From VietNam ',
                 quantity: 1,
+                totalPrice : 1,
             },
             {
                 id: 3,
@@ -42,6 +44,7 @@ export class ProductService {
                 classify: ['Medicine', 'Cough medicine'],
                 des: 'This is Siro Prospan from vietnam',
                 quantity: 1,
+                totalPrice : 10,
             },
             {
                 id: 4,
@@ -51,6 +54,7 @@ export class ProductService {
                 classify: ['Medicine', 'Headache medicine'],
                 des: 'Aspirin is a headache medicine',
                 quantity: 1,
+                totalPrice : 4,
             },
             {
                 id: 5,
@@ -60,6 +64,7 @@ export class ProductService {
                 classify: ['Medicine', 'Cough medicine'],
                 des: 'This is Eugica from USA',
                 quantity: 1,
+                totalPrice : 7,
             },
             {
                 id: 6,
@@ -69,6 +74,7 @@ export class ProductService {
                 classify: ['Medicine', 'Headache medicine'],
                 des: 'This is evequick from USA',
                 quantity: 1,
+                totalPrice : 4,
             },
             {
                 id: 7,
@@ -78,6 +84,7 @@ export class ProductService {
                 classify: ['Medicine', 'Headache medicine'],
                 des: 'This is Headache medicine from USA',
                 quantity: 1,
+                totalPrice : 6,
             },
             {
                 id: 8,
@@ -87,6 +94,7 @@ export class ProductService {
                 classify: ['Medicine', 'Headache medicine'],
                 des: 'This is Headache medicine from USA',
                 quantity: 1,
+                totalPrice : 8,
             },
             {
                 id: 9,
@@ -96,6 +104,7 @@ export class ProductService {
                 classify: ['Medicine', 'Stomach medicine'],
                 des: 'This is Headache Stomach from USA',
                 quantity: 1,
+                totalPrice : 6,
             },
             {
                 id: 10,
@@ -105,6 +114,7 @@ export class ProductService {
                 classify: ['Food Supplement', 'effervescent medicine'],
                 des: 'This is Effervesment medicine from USA',
                 quantity: 1,
+                totalPrice : 7,
             },
             {
                 id: 11,
@@ -114,6 +124,7 @@ export class ProductService {
                 classify: ['Medicine', 'Stomach medicine'],
                 des: 'This is Stomach medicine from USA',
                 quantity: 1,
+                totalPrice : 5,
             },
             {
                 id: 12,
@@ -123,6 +134,7 @@ export class ProductService {
                 classify: ['Food Supplement', 'effervescent medicine'],
                 des: 'This is effervescent medicine from USA',
                 quantity: 1,
+                totalPrice : 3,
             },
             {
                 id: 13,
@@ -132,6 +144,7 @@ export class ProductService {
                 classify: ['Food Supplement', 'lozenges'],
                 des: 'This is lozenges from USA',
                 quantity: 1,
+                totalPrice : 2,
             },
             {
                 id: 14,
@@ -141,6 +154,7 @@ export class ProductService {
                 classify: ['Food Supplement', 'lozenges'],
                 des: 'This is lozenges from USA',
                 quantity: 1,
+                totalPrice : 2,
             },
             {
                 id: 15,
@@ -150,6 +164,7 @@ export class ProductService {
                 classify: ['Mask', 'Medical mask type 2'],
                 des: 'This is Medical Mask Type 2 from USA',
                 quantity: 1,
+                totalPrice : 1,
             },
             {
                 id: 16,
@@ -159,6 +174,7 @@ export class ProductService {
                 classify: ['Mask', 'Medical mask type 1'],
                 des: 'This is Medical Mask Type 1 from USA',
                 quantity: 1,
+                totalPrice : 1,
             },
             {
                 id: 17,
@@ -168,6 +184,7 @@ export class ProductService {
                 classify: ['Mask', 'Medical mask type 2'],
                 des: 'This is Medical Mask Type 2 from USA',
                 quantity: 1,
+                totalPrice : 1,
             },
             {
                 id: 18,
@@ -177,6 +194,7 @@ export class ProductService {
                 classify: ['Medical Instruments', 'Wheel chair type 1'],
                 des: 'this is Wheel chair black',
                 quantity: 1,
+                totalPrice : 100,
             },
             {
                 id: 19,
@@ -186,6 +204,7 @@ export class ProductService {
                 classify: ['Medical Instruments', 'Neelde type 1'],
                 des: 'This is a needle',
                 quantity: 1,
+                totalPrice : 3,
             },
             {
                 id: 20,
@@ -195,6 +214,7 @@ export class ProductService {
                 classify: ['Medical Instruments', 'Crutch'],
                 des: 'This is wood Crutch',
                 quantity: 1,
+                totalPrice : 3,
             }
         ];
     }

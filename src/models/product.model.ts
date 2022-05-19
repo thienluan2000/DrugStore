@@ -6,6 +6,7 @@ export interface IProductModel {
     classify : string[],
     des : string,
     quantity : number,
+    totalPrice : number,
 }
 
 // export class Product{

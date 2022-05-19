@@ -13,6 +13,7 @@ export class CartService {
     );
     if (found) {
       product.quantity++;
+      product.totalPrice=product.price*product.quantity;
     } else {
       this.items.push(product);
     }
@@ -21,11 +22,6 @@ export class CartService {
   getItems() {
     return this.items;
   }
-
-  // clearCart() {
-  //   this.items = [];
-  //   return this.items;
-  // }
 
   removeProduct(key: IProductModel) {
     this.items.forEach((value, index) => {

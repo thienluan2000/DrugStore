@@ -15,10 +15,12 @@
       </div>
       <div class="list-group list-group-horizontal-md">
         <p>Unit Price : </p>
-        <price-display [price]="item.price" class="ms-2"></price-display>
+        <price-display [price]="item.price" class="ms-1"></price-display>
+        <p class="ms-3">Total Price : </p>
+        <div class="ms-1" style="font-weight: bold; color:rgb(7, 158, 45)"> {{ item.totalPrice }} $</div>
       </div>
       <div class="list-group list-group-horizontal-md">
-        <p> Quantity: </p>
+        <p> Quantity : </p>
         <input type="number" style="height: 25px;width: 50px;" class="ms-2" id="quantity" name="quantity" min="1"
           max="100" value="{{item.quantity}}">
       </div>
