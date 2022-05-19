@@ -33,4 +33,8 @@ export class CartService {
     });
   }
 
+  // countTotal(product: IProductModel){
+  //   this.
+  // }
+
 }
