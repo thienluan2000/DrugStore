@@ -1,4 +1,4 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { CartService } from 'src/services/cart.service';
 import { IProductModel } from 'src/models/product.model';
 @Component({
@@ -12,6 +12,7 @@ export class CartComponent implements OnInit {
   constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
+    console.log(this.items);
   }
 
   clearCart() {
@@ -23,5 +24,14 @@ export class CartComponent implements OnInit {
     this.cartService.removeProduct(item);
   }
 
+  changeQuantity(item: IProductModel) {
+    alert("your quantity is : " + item.quantity);
+    item.totalPrice = item.price * item.quantity;
+    console.log(item.totalPrice, item.quantity, item.price);
+  }
+
+  alertQuantity(): void {
+    alert("If you change the Quantity,Please click Update TotalPrice Button to update the new total price ");
+  }
 
 }

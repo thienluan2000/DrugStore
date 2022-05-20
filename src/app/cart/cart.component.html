@@ -1,6 +1,6 @@
 <h1 class="tittle"><span class="badge bg-info rounded-pill"> <i class="bi bi-bag"></i> My Cart</span></h1>
 
-<div class="container-fluid" *ngIf="items ; else elseBlock">
+<div class="container-fluid" *ngIf="items.length>0 ; else item">
   <div class="row mt-3" *ngFor="let item of items">
     <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12 border">
       <img class="card-img-top img-fluid" [src]="item.imageUrl" style="height: 17rem;">
@@ -20,9 +20,12 @@
         <div class="ms-1" style="font-weight: bold; color:rgb(7, 158, 45)"> {{ item.totalPrice }} $</div>
       </div>
       <div class="list-group list-group-horizontal-md">
-        <p> Quantity : </p>
-        <input type="number" style="height: 25px;width: 50px;" class="ms-2" id="quantity" name="quantity" min="1"
-          max="100" value="{{item.quantity}}">
+        <p class="mt-1"> Quantity : </p>
+        <form #totalPrice="ngForm" (ngSubmit)="changeQuantity(totalPrice.value)">
+          <input type="number" style="height: 25px;width: 50px;" class="ms-2" id="quantity" name="quantity" min="1"
+            max="100" [(ngModel)]="item.quantity" (click)="alertQuantity()">
+          <input type="submit" value="Update TotalPrice" class="btn btn-warning btn-sm ms-3 mb-1">
+        </form>
       </div>
       <div class="mt-3">
         <a class="btn btn-danger btn-sm" (click)="removeProduct(item)">Remove item <i class="bi bi-x-lg"></i></a>
@@ -31,8 +34,12 @@
   </div>
 </div>
 
-<ng-template #elseBlock>
- <h1>dsds</h1>
+
+<!--Display when cart page empty-->
+<ng-template #item>
+  <div class="container-fluid">
+    <img src="assets/images/emptyCart.jpg" class="rounded mx-auto d-block img-fluid" alt="emptyCart">
+  </div>
 </ng-template>
 
 <div class="text-center">

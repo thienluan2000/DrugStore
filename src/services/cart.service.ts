@@ -13,7 +13,7 @@ export class CartService {
     );
     if (found) {
       product.quantity++;
-      product.totalPrice=product.price*product.quantity;
+      product.totalPrice = product.price * product.quantity;
     } else {
       this.items.push(product);
     }
@@ -29,8 +29,10 @@ export class CartService {
     });
   }
 
-  // countTotal(product: IProductModel){
-  //   this.
+  // updateTotalPrice(product: IProductModel){
+  //   const found = this.items.find(
+  //     item => item.quantity != 
+  //   )
   // }
 
 }
