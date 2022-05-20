@@ -29,10 +29,9 @@ export class CartService {
     });
   }
 
-  // updateTotalPrice(product: IProductModel){
-  //   const found = this.items.find(
-  //     item => item.quantity != 
-  //   )
-  // }
+  updateTotalPrice(product: IProductModel){
+    product.totalPrice = product.price * product.quantity;
+    return product.totalPrice;
+  }
 
 }
