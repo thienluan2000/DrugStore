@@ -8,7 +8,6 @@ import { IProductModel } from 'src/models/product.model';
 })
 export class CartComponent implements OnInit {
   items = this.cartService.getItems();
-  public q! : number;
   @Input() item!: IProductModel | null;
   constructor(private cartService: CartService) { }
 
@@ -32,11 +31,15 @@ export class CartComponent implements OnInit {
 
   alertQuantity(item: IProductModel): void {
     alert("If you change the Quantity , Please click Update TotalPrice Button to update the new total price ");
-    this.q = item.quantity;
-    if(this.q != item.quantity)
-    {
-      this.cartService.updateTotalPrice(item);
-    }
+    // this.q = item.quantity;
+    // if(this.q != item.quantity)
+    // {
+    //   this.cartService.updateTotalPrice(item);
+    // }
+  }
+
+  updateTotalPrice(item: IProductModel){
+    this.cartService.updateTotalPrice(item);
   }
 
 }
