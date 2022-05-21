@@ -25,6 +25,10 @@
           <input type="number" style="height: 25px;width: 50px;" class="ms-2" id="quantity" name="quantity" min="1"
             max="100" [(ngModel)]="item.quantity" (click)="alertQuantity(item)">
           <input type="submit" value="Update TotalPrice" class="btn btn-warning btn-sm ms-3 mb-1">
+          <input type="number" style="height: 25px;width: 50px;" class="ms-2" id="price" name="price" min="1"
+          max="100" [(ngModel)]="item.price" >
+          <input type="number" style="height: 25px;width: 50px;" class="ms-2" id="totalprice" name="totalprice" min="1"
+          max="100" [(ngModel)]="item.totalPrice" >
         </form>
       </div>
       <div class="mt-3">
