@@ -15,8 +15,9 @@ export class CartComponent implements OnInit {
   }
 
   clearCart() {
-    this.items = [];
-    return this.items;
+    // this.items = [];
+    // return this.items;
+    localStorage.clear();
   }
 
   removeProduct(item: IProductModel) {
