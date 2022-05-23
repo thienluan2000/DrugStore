@@ -4,46 +4,40 @@ import { IProductModel } from 'src/models/product.model';
   providedIn: 'root'
 })
 export class CartService {
-  public items: IProductModel[] = [];
-  public q! : number ;
+  private cartItems: IProductModel[] = [];
+  setJson = JSON.stringify(this.cartItems);
   constructor() { }
 
   addToCart(product: IProductModel) {
-    const found = this.items.find(
-      item => item === product
-    );
-    if (found) {
+    if (this.cartItems.some(item => item.id === product.id)) {
       product.quantity++;
       product.totalPrice = product.price * product.quantity;
     } else {
-      this.items.push(product);
+      this.cartItems.push(product);
+      localStorage.setItem('key',JSON.stringify({key:product}));
     }
   }
 
   getItems() {
-    return this.items;
+    return this.cartItems;
+    localStorage.getItem('key');
   }
 
   removeProduct(key: IProductModel) {
-    this.items.forEach((value, index) => {
-      if (value == key) this.items.splice(index, 1);
+    this.cartItems.forEach((value, index) => {
+      if (value == key) this.cartItems.splice(index, 1);
     });
   }
 
-  updateTotalPrice(product: IProductModel){
-    const found = this.items.find(
-      item => item.quantity === product.quantity
-    );
-    // this.q = product.quantity;
-    if(found){
+  public updateTotalPrice(product: IProductModel) {
+    const existedItem = this.cartItems.find(item => item.id === product.id)
+    if (existedItem) {
       product.totalPrice = product.price * product.quantity;
-      console.log(product.totalPrice);
+      Object.assign(existedItem, product);
     }
-    else{
-      console.log("you fail",product);
-      console.log(this.items);
+    else {
+      console.log("you fail", product);
     }
-    //console.log(product.quantity,product.price,product.totalPrice);
   }
 
 }

@@ -1,7 +1,6 @@
 import { IProductModel } from "./product.model";
 
-export interface ICartModel {
+export interface ICartModel extends IProductModel{
   quantity : number,
   totalPrice : number,
-  children : IProductModel[]
 }

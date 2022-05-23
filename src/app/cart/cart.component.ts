@@ -31,23 +31,10 @@ export class CartComponent implements OnInit {
 
   alertQuantity(item: IProductModel): void {
     alert("If you change the Quantity , Please click Update TotalPrice Button to update the new total price ");
-    // this.q = item.quantity;
-    // if(this.q != item.quantity)
-    // {
-    //   this.cartService.updateTotalPrice(item);
-    // }
   }
 
-  updateTotalPrice(item: IProductModel){
+  updateTotalPrice(item: IProductModel) {
     this.cartService.updateTotalPrice(item);
-  }
-
-  total(item: IProductModel) {
-    let Total = 0;
-    for (let p of this.items) {
-      Total += p.quantity * p.price;
-    }
-    return Total;
   }
 
 }
