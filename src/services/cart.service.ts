@@ -24,16 +24,30 @@ export class CartService {
     // return JSON.parse(localStorage.getItem('key') || '{}');
   }
 
+
   // removeProduct(key: IProductModel) {
   //   this.cartItems.forEach((value, index) => {
   //     if (value == key) this.cartItems.splice(index, 1);
   //   });
   // }
 
-  removeProduct(key: IProductModel){
-    localStorage.removeItem('key');
+  removeProduct(product: IProductModel) {
+    // localStorage.removeItem('key');
+    if ((this.cartItems.some(item => item.id === product.id))) {
+      localStorage.removeItem('key');
+    }
+    else {
+      console.log('you fail')
+    }
   }
 
+  clearCart() {
+    localStorage.clear();
+    this.getItems();
+    window.location.reload();
+    //return this.cartItems;
+    // localStorage.clear();
+  }
 
 
   public updateTotalPrice(product: IProductModel) {

@@ -15,9 +15,7 @@ export class CartComponent implements OnInit {
   }
 
   clearCart() {
-    // this.items = [];
-    // return this.items;
-    localStorage.clear();
+   this.cartService.clearCart();
   }
 
   removeProduct(item: IProductModel) {
@@ -30,7 +28,7 @@ export class CartComponent implements OnInit {
 
   }
 
-  alertQuantity(item: IProductModel): void {
+  alertQuantity(): void {
     alert("If you change the Quantity , Please click Update TotalPrice Button to update the new total price ");
   }
 
