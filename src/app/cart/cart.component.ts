@@ -42,4 +42,12 @@ export class CartComponent implements OnInit {
     this.cartService.updateTotalPrice(item);
   }
 
+  total(item: IProductModel) {
+    let Total = 0;
+    for (let p of this.items) {
+      Total += p.quantity * p.price;
+    }
+    return Total;
+  }
+
 }

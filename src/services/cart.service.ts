@@ -34,7 +34,6 @@ export class CartService {
     const found = this.items.find(
       item => item.quantity === product.quantity
     );
-
     // this.q = product.quantity;
     if(found){
       product.totalPrice = product.price * product.quantity;
@@ -43,7 +42,6 @@ export class CartService {
     else{
       console.log("you fail",product);
       console.log(this.items);
-
     }
     //console.log(product.quantity,product.price,product.totalPrice);
   }
