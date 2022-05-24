@@ -1,6 +1,5 @@
-import { IProductModel } from "./product.model";
 
-export interface ICartModel extends IProductModel{
+export interface ICartModel {
   quantity : number,
   totalPrice : number,
 }

@@ -22,7 +22,6 @@ export class CartService {
     return this.cartItems = JSON.parse(localStorage.getItem('key') || '{}');
   }
 
-
   public removeProduct(key: IProductModel) {
     this.cartItems.forEach((value, index) => {
       if (value == key) {
@@ -32,13 +31,11 @@ export class CartService {
     });
   }
 
-
-   public clearCart() {
+  public clearCart() {
     localStorage.clear();
     this.getItems();
     window.location.reload();
   }
-
 
   public updateTotalPrice(product: IProductModel) {
     const existedItem = this.cartItems.find(item => item.id === product.id)
