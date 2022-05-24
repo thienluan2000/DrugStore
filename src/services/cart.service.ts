@@ -8,7 +8,8 @@ export class CartService {
   constructor() { }
 
   public addToCart(product: IProductModel) {
-    if (this.cartItems.some(item => item.id === product.id)) {
+    const existedItem = this.cartItems.some(item => item.id === product.id)
+    if (existedItem) {
       product.quantity++;
       product.totalPrice = product.price * product.quantity;
       localStorage.setItem('key', JSON.stringify(this.cartItems));
