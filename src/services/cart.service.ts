@@ -7,7 +7,7 @@ export class CartService {
   private cartItems: IProductModel[] = [];
   constructor() { }
 
-  addToCart(product: IProductModel) {
+  public addToCart(product: IProductModel) {
     if (this.cartItems.some(item => item.id === product.id)) {
       product.quantity++;
       product.totalPrice = product.price * product.quantity;
@@ -18,35 +18,25 @@ export class CartService {
     }
   }
 
-  getItems() {
-    //return this.cartItems;
+  public getItems() {
     return this.cartItems = JSON.parse(localStorage.getItem('key') || '{}');
-    // return JSON.parse(localStorage.getItem('key') || '{}');
   }
 
 
-  // removeProduct(key: IProductModel) {
-  //   this.cartItems.forEach((value, index) => {
-  //     if (value == key) this.cartItems.splice(index, 1);
-  //   });
-  // }
-
-  removeProduct(product: IProductModel) {
-    // localStorage.removeItem('key');
-    if ((this.cartItems.some(item => item.id === product.id))) {
-      localStorage.removeItem('key');
-    }
-    else {
-      console.log('you fail')
-    }
+  public removeProduct(key: IProductModel) {
+    this.cartItems.forEach((value, index) => {
+      if (value == key) {
+        this.cartItems.splice(index, 1);
+        localStorage.setItem('key', JSON.stringify(this.cartItems));
+      }
+    });
   }
 
-  clearCart() {
+
+   public clearCart() {
     localStorage.clear();
     this.getItems();
     window.location.reload();
-    //return this.cartItems;
-    // localStorage.clear();
   }
 
 

@@ -15,17 +15,11 @@ export class CartComponent implements OnInit {
   }
 
   clearCart() {
-   this.cartService.clearCart();
+    this.cartService.clearCart();
   }
 
   removeProduct(item: IProductModel) {
     this.cartService.removeProduct(item);
-  }
-
-  changeQuantity(item: IProductModel) {
-    alert("your quantity is : " + item.quantity);
-    console.log(item.totalPrice, item.quantity, item.price);
-
   }
 
   alertQuantity(): void {
