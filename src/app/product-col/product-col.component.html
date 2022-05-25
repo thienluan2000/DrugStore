@@ -1,27 +1,27 @@
 <div class="container-fluid">
-    <div class="row">
-        <div class="col-md-3 col-sm-6 col-xs-12 py-1 px-2 ms-1 mt-3" *ngIf="product">
-            <div class="card product ">
-                <div routerLink="product/{{product.id}}">
-                    <product-image [product]="product"></product-image>
-                    <div class="card-body text-center">
-                        <div class="content">
-                            <div class="header text-uppercase"> {{ product.name }}</div>
-                            <div class="classify">
-                                <product-classify [product]="product"></product-classify>
-                            </div>
-                            <price-display [price]="product.price"></price-display>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-grid">
-                    <a class="btn btn-info btn-lg" (click)="addToCart(product)">Add to Cart <i
-                            class="bi bi-cart2"></i></a>
-                </div>
+  <div class="row">
+    <div class="col py-1 px-2 ms-1 mt-3" *ngIf="product">
+      <div class="card product">
+        <div routerLink="product/{{ product.id }}">
+          <product-image  [product]="product"></product-image>
+          <div class="card-body text-center">
+            <div class="content">
+              <div class="header text-uppercase">{{ product.name }}</div>
+              <div class="classify">
+                <product-classify [product]="product"></product-classify>
+              </div>
+              <price-display [price]="product.price"></price-display>
             </div>
+          </div>
         </div>
+        <div class="d-grid">
+          <a class="btn btn-info btn-lg" (click)="addToCart(product)"
+            >Add to Cart <i class="bi bi-cart2"></i
+          ></a>
+        </div>
+      </div>
     </div>
+  </div>
 </div>
-
 
 <!-- https://goclamweb.com/bai-13-lam-web-voi-bootstrap-chia-bo-cuc-va-responsive/ -->
