@@ -11,20 +11,31 @@
   border-radius: 4px;
 }
 
-@media screen and (max-width: 768px) {
+
+@media screen and (min-width: 440px) {
   .product {
-    width: 22rem;
+    max-width: 22rem;
+    height: 27rem;
+    //position: static;
+    color: yellow;
+  }
+}
+
+@media screen and (min-width: 821px) {
+  .product {
+    max-width: 20rem;
     height: 27rem;
     //position: static;
     color: red;
   }
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (min-width: 1200px) {
   .product {
-    width: 22rem;
+    max-width: 21rem;
     height: 27rem;
+
     //position: static;
-    color: yellow;
+    color: purple;
   }
 }
