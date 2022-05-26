@@ -11,31 +11,34 @@
   border-radius: 4px;
 }
 
-
-@media screen and (min-width: 440px) {
+@media screen and (max-width: 1600px) {
   .product {
-    max-width: 22rem;
+    max-width: 25%;
     height: 27rem;
-    //position: static;
-    color: yellow;
+    color: purple;
   }
 }
 
-@media screen and (min-width: 821px) {
+@media screen and (max-width: 1200px) {
   .product {
-    max-width: 20rem;
+    max-width: 33.33%;
     height: 27rem;
-    //position: static;
     color: red;
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (max-width: 800px) {
   .product {
-    max-width: 21rem;
+    max-width: 50%;
     height: 27rem;
+    color: blue;
+  }
+}
 
-    //position: static;
-    color: purple;
+@media screen and (max-width: 420px) {
+  .product {
+    max-width: 100%;
+    height: 27rem;
+    color: yellow;
   }
 }

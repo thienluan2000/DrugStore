@@ -1,10 +1,10 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col py-1 px-2 ms-1 mt-3" *ngIf="product">
-      <div class="card product">
+    <div class="py-1 px-2 ms-1 mt-3" *ngIf="product">
+      <div class="product card">
         <div routerLink="product/{{ product.id }}">
-          <product-image  [product]="product"></product-image>
-          <div class="card-body text-center">
+          <product-image [product]="product"></product-image>
+          <div class="text-center">
             <div class="content">
               <div class="header text-uppercase">{{ product.name }}</div>
               <div class="classify">
