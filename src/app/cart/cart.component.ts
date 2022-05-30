@@ -8,6 +8,7 @@ import { IProductModel } from 'src/models/product.model';
 })
 export class CartComponent implements OnInit {
   items = this.cartService.getItems();
+  totalBill = this.cartService.countBill();
   @Input() item!: IProductModel | null;
   constructor(private cartService: CartService) { }
 
@@ -30,8 +31,8 @@ export class CartComponent implements OnInit {
     this.cartService.updateTotalPrice(item);
   }
 
-  countBill(item: IProductModel) {
-    this.cartService.countBill(item);
+  countBill() {
+    this.cartService.countBill();
   }
 
 }

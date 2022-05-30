@@ -7,6 +7,7 @@ export class CartService {
   private cartItems: IProductModel[] = [];
   constructor() { }
 
+  //Function add product from list to cart
   public addToCart(product: IProductModel) {
     const existedItem = this.cartItems.some(item => item.id === product.id)
     if (existedItem) {
@@ -19,47 +20,48 @@ export class CartService {
     }
   }
 
+  //Function Display product had saved from local storage to cart
   public getItems() {
     return this.cartItems = JSON.parse(localStorage.getItem('key') || '{}');
   }
 
+  //Function remove one product in cart
   public removeProduct(key: IProductModel) {
     this.cartItems.forEach((value, index) => {
       if (value == key) {
         this.cartItems.splice(index, 1);
         localStorage.setItem('key', JSON.stringify(this.cartItems));
+        window.location.reload();
       }
     });
   }
 
+  //Function Remove all product in cart
   public clearCart() {
     localStorage.clear();
     this.getItems();
     window.location.reload();
   }
 
+  //Function update total price of product when change quantity
   public updateTotalPrice(product: IProductModel) {
     const existedItem = this.cartItems.find(item => item.id === product.id)
     if (existedItem) {
       product.totalPrice = product.price * product.quantity;
       Object.assign(existedItem, product);
       localStorage.setItem('key', JSON.stringify(this.cartItems));
+      window.location.reload();
     }
     else {
       console.log("you fail", product);
     }
   }
 
-  public countBill(product: IProductModel) {
+  //function count total of bill
+  public countBill() {
     var total = 0;
-    const existedItem = this.cartItems.some(item => item.id === product.id)
-    if (existedItem) {
-      product.quantity++;
-      product.totalPrice = product.price * product.quantity;
-    } else {
-      total = product.totalPrice;
-      console.log(product.totalPrice);
-    }
+    this.cartItems.forEach(items => total = total + items.totalPrice);
+    return total;
   }
 
 }
