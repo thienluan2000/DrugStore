@@ -30,4 +30,8 @@ export class CartComponent implements OnInit {
     this.cartService.updateTotalPrice(item);
   }
 
+  countBill(item: IProductModel) {
+    this.cartService.countBill(item);
+  }
+
 }

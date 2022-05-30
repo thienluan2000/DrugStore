@@ -50,4 +50,16 @@ export class CartService {
     }
   }
 
+  public countBill(product: IProductModel) {
+    var total = 0;
+    const existedItem = this.cartItems.some(item => item.id === product.id)
+    if (existedItem) {
+      product.quantity++;
+      product.totalPrice = product.price * product.quantity;
+    } else {
+      total = product.totalPrice;
+      console.log(product.totalPrice);
+    }
+  }
+
 }
