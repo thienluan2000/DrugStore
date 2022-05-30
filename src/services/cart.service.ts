@@ -38,8 +38,8 @@ export class CartService {
 
   //Function Remove all product in cart
   public clearCart() {
-    localStorage.clear();
-    this.getItems();
+    this.cartItems = [];
+    localStorage.setItem('key', JSON.stringify(this.cartItems));
     window.location.reload();
   }
 

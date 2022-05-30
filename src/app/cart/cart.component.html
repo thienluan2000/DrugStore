@@ -39,6 +39,13 @@
   </div>
 </div>
 
+<div class="text-center">
+  <a class="btn btn-outline-info btn-md m-3" data-bs-toggle="modal"
+    data-bs-target="#countBill">Pay the Bill <i class="bi bi-currency-dollar"></i></a>
+  <a class="btn btn-outline-warning btn-md m-3" (click)="clearCart()">Remove all items <i class="bi bi-x-lg"></i></a>
+  <a href="" class="btn btn-outline-success btn-md m-3">Back to ProductList Page <i class="bi bi-backspace"></i></a>
+</div>
+
 <!--Display when cart page empty-->
 <ng-template #emptyCart>
   <div class="container-fluid">
@@ -46,12 +53,6 @@
   </div>
 </ng-template>
 
-<div class="text-center">
-  <a class="btn btn-outline-info btn-md m-3" data-bs-toggle="modal"
-    data-bs-target="#countBill">Pay the Bill <i class="bi bi-currency-dollar"></i></a>
-  <a class="btn btn-outline-warning btn-md m-3" (click)="clearCart()">Remove all items <i class="bi bi-x-lg"></i></a>
-  <a href="" class="btn btn-outline-success btn-md m-3">Back to ProductList Page <i class="bi bi-backspace"></i></a>
-</div>
 
 
 <!--Modal Count Bill-->
@@ -64,8 +65,8 @@
             <i class="bi bi-receipt"></i> Your Bill</span></h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
-        <table class="table table-responsive table-striped">
+      <div class="modal-body table-responsive">
+        <table class="table table-striped">
           <thead>
             <tr class="table-info">
               <th scope="col">Index</th>
@@ -85,7 +86,7 @@
             </tr>
           </tbody>
         </table>
-        <h4 class="text-center">Total price of your bill : {{totalBill}} </h4>
+        <h4 class="text-center">Total price of your bill : {{totalBill}}$ </h4>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary">Pay the bill</button>

@@ -31,8 +31,4 @@ export class CartComponent implements OnInit {
     this.cartService.updateTotalPrice(item);
   }
 
-  countBill() {
-    this.cartService.countBill();
-  }
-
 }
