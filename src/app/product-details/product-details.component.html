@@ -24,7 +24,7 @@
                     <price-display [price]="selectedProduct.price" class="p"></price-display>
                 </div>
                 <div class="d-grid gap-2 col-lg-6 mx-auto">
-                    <a class="btn btn-info btn-lg mt-3" (click)="addToCart(selectedProduct)">Add product to cart <i
+                    <a class="btn btn-info btn-lg mt-3" (click)="addToCart(selectedProduct)" id="addProduct">Add product to cart <i
                             class="bi bi-cart2"></i></a>
                 </div>
                 <div class="d-grid gap-2 col-lg-6 mx-auto">
@@ -35,3 +35,17 @@
         </div>
     </div>
 </div>
+
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="addProduct" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header">
+        <img src="..." class="rounded me-2" alt="...">
+        <strong class="me-auto">Bootstrap</strong>
+        <small>11 mins ago</small>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body">
+        Hello, world! This is a toast message.
+      </div>
+    </div>
+  </div>

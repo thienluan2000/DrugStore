@@ -25,6 +25,7 @@ import { FooterComponent } from './footer/footer.component';
 import { ContactComponent } from './contact/contact.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { CartComponent } from './cart/cart.component';
+import { SignInComponent } from './sign-in/sign-in.component';
 
 @NgModule({
     declarations: [
@@ -44,6 +45,7 @@ import { CartComponent } from './cart/cart.component';
         ContactComponent,
         SignUpComponent,
         CartComponent,
+        SignInComponent,
        
 
     ],

@@ -18,14 +18,7 @@ export class ProductDetailsComponent implements OnInit {
         private cartService: CartService) { }
 
     ngOnInit(): void {
-
-
-        // First get the product id from the current route.
-
         const productId = Number(this.route.snapshot.paramMap.get('productId'));
-
-        // Find the product that correspond with the id provided in route.
-
         this.productService.getProductDetail(productId).subscribe(res => {
             console.log(res);
             this.selectedProduct = res;
