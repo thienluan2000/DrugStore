@@ -10,7 +10,7 @@ export class SignUpComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.customer = new Customer('das','sda','sda','sda','sda',);
+  //  this.customer = new Customer('das','sda','sda','sda','sda',);
   }
 
 

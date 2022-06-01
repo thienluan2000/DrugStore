@@ -5,7 +5,7 @@
 </h1>
 
 <div class="container-fluid">
-  <form #userForm="ngForm" class="row">
+  <form #signUpForm="ngForm" class="row">
     <div class="col-md-3"></div>
     <div class="col">
       <div class="mb-2">
@@ -21,7 +21,7 @@
           minlength="6"
           #inputUserName="ngModel"
         />
-        <div class="alert alert-danger mt-2" *ngIf="!inputUserName.valid && (!inputUserName.pristine || userForm.submitted)">
+        <div class="alert alert-danger mt-2" *ngIf="!inputUserName.valid && (!inputUserName.pristine || signUpForm.submitted)">
           <small>Username is required and must have more than 6 characters</small>
         </div>
       </div>
