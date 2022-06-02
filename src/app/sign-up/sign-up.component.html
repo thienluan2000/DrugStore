@@ -5,7 +5,7 @@
 </h1>
 
 <div class="container-fluid">
-  <form #signUpForm="ngForm" class="row">
+  <form #signUpForm="ngForm" class="row" (ngSubmit)="signUp(customer)" *ngIf="customer">
     <div class="col-md-3"></div>
     <div class="col">
       <div class="mb-2">
@@ -15,7 +15,7 @@
           class="form-control"
           id="username"
           placeholder="Input your Username"
-          name="username_input"
+          name="username"
           [(ngModel)]="customer.username"
           required
           minlength="6"
@@ -82,7 +82,7 @@
         />
       </div>
       <div>
-        <button type="Submit" class="btn btn-outline-info">Sign Up</button>
+        <button type="Submit" class="btn btn-outline-info" >Sign Up</button>
         <button type="Cancel" class="btn btn-outline-danger ms-3">
           Cancel
         </button>

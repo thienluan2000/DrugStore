@@ -1,4 +1,4 @@
-export class Customer {
+export class ICustomerModel {
   constructor(
     public username: string,
     public password: string,
@@ -8,3 +8,10 @@ export class Customer {
   ) { }
 }
 
+// export interface ICustomerModel {
+//   username: string,
+//   password: string,
+//   email: string,
+//   phonenumber: string,
+//   address: string,
+// }
