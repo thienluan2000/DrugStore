@@ -8,16 +8,20 @@ import { CustomerService } from 'src/services/customer.service';
   styleUrls: ['./sign-in.component.scss']
 })
 export class SignInComponent implements OnInit {
-  customer! : ICustomerModel;
-  constructor(private router: Router,private customerService: CustomerService) {
-    this.customer = new ICustomerModel('','','','','',);
-   }
+  guest!: ICustomerModel;
+  constructor(private router: Router, private customerService: CustomerService) {
+    this.guest = new ICustomerModel('', '', '', '', '',);
+  }
 
   ngOnInit(): void {
   }
 
   public signUp() {
     this.router.navigate(['signUp']);
+  }
+
+  public signIn(guest: ICustomerModel) {
+    this.customerService.signIn(guest);
   }
 
 }

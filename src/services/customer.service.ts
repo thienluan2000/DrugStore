@@ -4,8 +4,8 @@ import { ICustomerModel } from 'src/models/customer.model';
   providedIn: 'root'
 })
 export class CustomerService {
-  customer! : ICustomerModel;
-
+  customer!: ICustomerModel;
+  guest!: ICustomerModel;
   constructor() {
   }
 
@@ -14,17 +14,13 @@ export class CustomerService {
     console.log(customer);
   }
 
-  public signIn(customer: ICustomerModel) {
-    customer = JSON.parse(localStorage.getItem('customer') || '{}');
-    //const checkCustomer = this.customer.fin(item => item.username === customer.username)
-     if (customer.username ) {
-      // product.totalPrice = product.price * product.quantity;
-      // Object.assign(existedItem, product);
-      // localStorage.setItem('key', JSON.stringify(this.cartItems));
-      console.log("You have login")
+  public signIn(guest: ICustomerModel) {
+    this.customer = JSON.parse(localStorage.getItem('customer') || '{}');
+    if (this.customer.username === guest.username && this.customer.password === guest.password) {
+      console.log("Login success")
     }
     else {
-      console.log("you fail");
+      console.log("Login fail");
     }
   }
 

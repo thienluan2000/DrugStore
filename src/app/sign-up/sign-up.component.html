@@ -1,7 +1,6 @@
 <h1 class="tittle">
   <span class="badge bg-info rounded-pill">
-    <i class="bi bi-person-plus"></i> Sign Up Account</span
-  >
+    <i class="bi bi-person-plus"></i> Sign Up Account</span>
 </h1>
 
 <div class="container-fluid">
@@ -10,80 +9,42 @@
     <div class="col">
       <div class="mb-2">
         <label for="username" class="h5">Username</label>
-        <input
-          type="text"
-          class="form-control"
-          id="username"
-          placeholder="Input your Username"
-          name="username"
-          [(ngModel)]="customer.username"
-          required
-          minlength="6"
-          #inputUserName="ngModel"
-        />
-        <div class="alert alert-danger mt-2" *ngIf="!inputUserName.valid && (!inputUserName.pristine || signUpForm.submitted)">
-          <small>Username is required and must have more than 6 characters</small>
+        <input type="text" class="form-control" id="username" placeholder="Input your Username" name="username"
+          [(ngModel)]="customer.username" required minlength="8" #inputUserName="ngModel" />
+        <div class="alert alert-danger mt-2"
+          *ngIf="!inputUserName.valid && (!inputUserName.pristine || signUpForm.submitted)">
+          <small>Username is required and must have more than 8 characters</small>
         </div>
       </div>
       <div class="mb-2">
         <label for="email" class="h5">Email</label>
-        <input
-          type="email"
-          class="form-control"
-          id="email"
-          placeholder="Input your Email"
-          name="email"
-          [(ngModel)]="customer.email"
-        />
+        <input type="email" class="form-control" id="email" placeholder="Input your Email" name="email"
+          [(ngModel)]="customer.email" />
       </div>
       <div class="row mb-2">
         <div class="col">
           <label for="password" class="h5">Password</label>
-          <input
-            type="password"
-            class="form-control"
-            id="password"
-            placeholder="Input your password"
-            name="password"
-            [(ngModel)]="customer.password"
-          />
+          <input type="password" class="form-control" id="password" placeholder="Input your password" name="password"
+            [(ngModel)]="customer.password" />
         </div>
         <div class="col">
           <label for="rePassword" class="h5">Retype Password</label>
-          <input
-            type="password"
-            class="form-control"
-            id="rePassword"
-            placeholder="Retype your password"
-          />
+          <input type="password" class="form-control" id="rePassword" placeholder="Retype your password" />
         </div>
       </div>
       <div class="mb-2">
         <label for="phoneNumber" class="h5">PhoneNumber</label>
-        <input
-          type="text"
-          class="form-control"
-          id="phoneNumber"
-          placeholder="Input your phonenumber"
-          pattern="[0-9]*"
-          name="phonenumber"
-          [(ngModel)]="customer.phonenumber"
-        />
+        <input type="text" class="form-control" id="phoneNumber" placeholder="Input your phonenumber" pattern="[0-9]*"
+          name="phonenumber" [(ngModel)]="customer.phonenumber" />
       </div>
       <div class="mb-2">
         <label for="address" class="h5">Address</label>
-        <input
-          type="text"
-          class="form-control"
-          id="address"
-          placeholder="Input your Address"
-          name="address"
-          [(ngModel)]="customer.address"
-        />
+        <input type="text" class="form-control" id="address" placeholder="Input your Address" name="address"
+          [(ngModel)]="customer.address" />
       </div>
       <div>
-        <button type="Submit" class="btn btn-outline-info" >Sign Up</button>
-        <button type="Cancel" class="btn btn-outline-danger ms-3">
+        <button type="Submit" class="btn btn-outline-info">Sign Up</button>
+        <button type="reset" class="btn btn-outline-danger ms-3">
           Cancel
         </button>
         <button type="" class="btn btn-outline-success ms-3" routerLink="">
@@ -94,7 +55,3 @@
     <div class="col-md-3"></div>
   </form>
 </div>
-
-<h3>Check Variable Data</h3>
-<hr />
-<p>Name is : {{ customer | json }}</p>
