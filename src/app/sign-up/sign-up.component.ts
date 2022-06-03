@@ -8,6 +8,7 @@ import { CustomerService } from 'src/services/customer.service';
 })
 export class SignUpComponent implements OnInit {
   customer!: ICustomerModel;
+  repassword!: string;
   constructor(private customerService: CustomerService) { }
 
   ngOnInit(): void {
@@ -15,7 +16,14 @@ export class SignUpComponent implements OnInit {
   }
 
   public signUp(customer: ICustomerModel) {
-    this.customerService.signUp(customer);
+    if (this.repassword === this.customer.password) {
+      this.customerService.signUp(customer);
+    }
+    else {
+      console.log("Sign Up Fail");
+    }
   }
 
+
 }
+

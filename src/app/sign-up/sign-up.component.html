@@ -19,22 +19,35 @@
       <div class="mb-2">
         <label for="email" class="h5">Email</label>
         <input type="email" class="form-control" id="email" placeholder="Input your Email" name="email"
-          [(ngModel)]="customer.email" />
+          [(ngModel)]="customer.email" required minlength="4" #inputEmail="ngModel" />
+        <div class="alert alert-danger mt-2"
+          *ngIf="!inputEmail.valid && (!inputEmail.pristine || signUpForm.submitted)">
+          <small>Email is not the right shape and must have more than 4 characters</small>
+        </div>
       </div>
       <div class="row mb-2">
         <div class="col">
           <label for="password" class="h5">Password</label>
           <input type="password" class="form-control" id="password" placeholder="Input your password" name="password"
-            [(ngModel)]="customer.password" />
+            [(ngModel)]="customer.password" required minlength="8" #inputPassword="ngModel" />
+          <div class="alert alert-danger mt-2"
+            *ngIf="!inputPassword.valid && (!inputPassword.pristine || signUpForm.submitted)">
+            <small>Password is required and must have more than 8 characters</small>
+          </div>
         </div>
         <div class="col">
           <label for="rePassword" class="h5">Retype Password</label>
-          <input type="password" class="form-control" id="rePassword" placeholder="Retype your password" />
+          <input type="password" class="form-control" id="rePassword" placeholder="Retype your password"
+            name="repassword" [(ngModel)]="repassword" required minlength="8" #inputRepassword="ngModel" />
+          <div class="alert alert-danger mt-2"
+            *ngIf="!inputRepassword.valid && (!inputRepassword.pristine || signUpForm.submitted)">
+            <small>Password is required and must have more than 8 characters</small>
+          </div>
         </div>
       </div>
       <div class="mb-2">
         <label for="phoneNumber" class="h5">PhoneNumber</label>
-        <input type="text" class="form-control" id="phoneNumber" placeholder="Input your phonenumber" pattern="[0-9]*"
+        <input type="number" class="form-control" id="phoneNumber" placeholder="Input your phonenumber" pattern="[0-9]*"
           name="phonenumber" [(ngModel)]="customer.phonenumber" />
       </div>
       <div class="mb-2">
@@ -47,7 +60,7 @@
         <button type="reset" class="btn btn-outline-danger ms-3">
           Cancel
         </button>
-        <button type="" class="btn btn-outline-success ms-3" routerLink="">
+        <button class="btn btn-outline-success ms-3" routerLink="">
           Back to ProductList
         </button>
       </div>

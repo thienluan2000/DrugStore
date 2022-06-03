@@ -10,17 +10,25 @@ export class CustomerService {
   }
 
   public signUp(customer: ICustomerModel) {
-    localStorage.setItem('customer', JSON.stringify(customer));
-    console.log(customer);
+    const checkCondition = customer.username.length >= 8 && customer.email.includes("@") == true && customer.password.length >= 8;
+    if (checkCondition) {
+      localStorage.setItem('customer', JSON.stringify(customer));
+      console.log("SignUp success", customer);
+      window.alert("Sign Up Success");
+    }
+    else {
+      console.log('SignUp fail');
+    }
   }
 
   public signIn(guest: ICustomerModel) {
     this.customer = JSON.parse(localStorage.getItem('customer') || '{}');
-    if (this.customer.username === guest.username && this.customer.password === guest.password) {
-      console.log("Login success")
+    const checkCondition = this.customer.username === guest.username && this.customer.password === guest.password;
+    if (checkCondition) {
+      window.alert("Login success")
     }
     else {
-      console.log("Login fail");
+      window.alert("Username or Password has wrong!");
     }
   }
 
