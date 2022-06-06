@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
 import { IProductModel } from 'src/models/product.model';
+import { ICustomerModel } from 'src/models/customer.model';
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
   private cartItems: IProductModel[] = [];
+  information!: ICustomerModel;
   constructor() { }
 
   //Function add product from list to cart
@@ -62,6 +64,15 @@ export class CartService {
     var total = 0;
     this.cartItems.forEach(items => total = total + items.totalPrice);
     return total;
+  }
+
+
+  //Function Save information of customer without login
+  public saveInformation(information: ICustomerModel) {
+    localStorage.setItem('information', JSON.stringify(information));
+    console.log("SignUp success", information);
+    window.alert("Order Success");
+    this.clearCart();
   }
 
 }

@@ -1,18 +1,21 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { CartService } from 'src/services/cart.service';
 import { IProductModel } from 'src/models/product.model';
+import { ICustomerModel } from 'src/models/customer.model';
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.scss']
 })
 export class CartComponent implements OnInit {
+  information! : ICustomerModel;
   items = this.cartService.getItems();
   totalBill = this.cartService.countBill();
   @Input() item!: IProductModel | null;
   constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
+    this.information = new ICustomerModel('', '', '', '', '',);
   }
 
   clearCart() {
@@ -29,6 +32,10 @@ export class CartComponent implements OnInit {
 
   updateTotalPrice(item: IProductModel) {
     this.cartService.updateTotalPrice(item);
+  }
+
+  saveInformation(information: ICustomerModel){
+    this.cartService.saveInformation(information);
   }
 
 }
