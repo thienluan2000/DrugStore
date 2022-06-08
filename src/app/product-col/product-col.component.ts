@@ -9,7 +9,6 @@ import { CartService } from 'src/services/cart.service';
 })
 export class ProductColComponent {
   @Input() product!: IProductModel | null;
-  // public selectedProduct: IProductModel | null = null;
   constructor(private cartService: CartService) { }
   addToCart(product: IProductModel) {
     this.cartService.addToCart(product);

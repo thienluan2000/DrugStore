@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { IProductModel } from '../../models/product.model';
-import { ProductService } from 'src/services/product.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,10 +9,9 @@ import { Router } from '@angular/router';
 })
 export class SearchBarComponent implements OnInit {
   @Input() productList!: IProductModel[];
-  public searchKeywords!: string;
+  public searchKeywords: string = '';
 
   constructor(
-    private productService: ProductService,
     private router: Router) {
   }
   ngOnInit(): void {
@@ -21,15 +19,15 @@ export class SearchBarComponent implements OnInit {
   }
 
   public doSearch() {
-    // this.productService.getGlobalSearchList(this.searchKeywords);
-    this.router.navigate(['/'], { queryParams: { key: this.searchKeywords } });
-  }
+    const canReload = (window.location.pathname === '/');
+    this.router.navigate(['/'], { queryParams: (this.searchKeywords ? { key: this.searchKeywords } : undefined) }).then(() => {
+      this.searchKeywords = '';
 
-  refresh(): void {
-    //window.location.reload();
-    if (window.location.pathname == '/') {
-      window.location.reload();
-    }
+      if (canReload) {
+        window.location.reload();
+      }
+    });
+
   }
 
 }

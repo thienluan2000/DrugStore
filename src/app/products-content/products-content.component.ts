@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input , Output,EventEmitter } from '@angular/core';
 import { IProductModel } from 'src/models/product.model';
 import { ProductService } from 'src/services/product.service';
 import { ActivatedRoute } from '@angular/router';
@@ -8,12 +8,23 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./products-content.component.scss']
 })
 export class ProductsContentComponent implements OnInit {
+  @Input() product!: IProductModel;
   public products: IProductModel[] = [];
-  //pagination parameters
   public selectedPage: number = 1;
   public pageSize: number = 8;
+  public currentProduct: IProductModel | null = null;
 
-  constructor(private productService: ProductService, private route: ActivatedRoute,) { }
+  @Input('productList') set Data(value: IProductModel[]) {
+    if (value && value.length > 0) {
+      this.products = value.sort((a: IProductModel, b: IProductModel) => a.price - b.price);
+    }
+  }
+
+  //@Output() onProductSelected!: EventEmitter<IProductModel>;
+
+  constructor(private productService: ProductService, private route: ActivatedRoute,) {
+    //this.onProductSelected = new EventEmitter();
+   }
 
   ngOnInit(): void {
     console.log(this.route.snapshot.queryParamMap.get('key'));
@@ -27,7 +38,12 @@ export class ProductsContentComponent implements OnInit {
 
   }
 
-  public onProductSelected(product: IProductModel): void {
-    console.log('Product clicked: ', product);
-  }
+//   public onClicked(product: IProductModel): void {
+//     this.currentProduct = product;
+//     this.onProductSelected.emit(product);
+// }
+
+  // public onProductSelected(product: IProductModel): void {
+  //   console.log('Product clicked: ', product);
+  // }
 }

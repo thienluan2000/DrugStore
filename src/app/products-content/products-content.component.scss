@@ -1,3 +1,9 @@
 .background{
     background-color: rgb(214, 232, 243);
 }
+
+.break {
+  display: flex;
+  flex-flow: row wrap;
+  margin-bottom: 25px;
+}
