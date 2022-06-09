@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CartService } from 'src/services/cart.service';
 import { IProductModel } from 'src/models/product.model';
 import { ICustomerModel } from 'src/models/customer.model';
@@ -11,7 +11,7 @@ export class CartComponent implements OnInit {
   information! : ICustomerModel;
   items = this.cartService.getItems();
   totalBill = this.cartService.countBill();
-  @Input() item!: IProductModel | null;
+  item!: IProductModel | null;
   constructor(private cartService: CartService) { }
 
   ngOnInit(): void {

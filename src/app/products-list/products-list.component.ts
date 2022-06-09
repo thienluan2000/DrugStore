@@ -20,10 +20,9 @@ export class ProductsListComponent implements OnInit {
     }
   }
 
-  @Output() onProductSelected!: EventEmitter<IProductModel>;
+
 
   constructor(private productService: ProductService, private route: ActivatedRoute,) {
-    this.onProductSelected = new EventEmitter();
    }
 
   ngOnInit(): void {
@@ -37,11 +36,6 @@ export class ProductsListComponent implements OnInit {
     });
 
   }
-
-  public onClicked(product: IProductModel): void {
-    this.currentProduct = product;
-    this.onProductSelected.emit(product);
-}
 
 
 

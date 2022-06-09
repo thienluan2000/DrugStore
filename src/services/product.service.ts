@@ -7,7 +7,7 @@ import { ActivatedRoute } from '@angular/router';
 
 @Injectable()
 export class ProductService {
-  @Input() productList!: IProductModel[];
+  productList!: IProductModel[];
   public products: IProductModel[];
   private baseImgUrl: string = '/assets/images';
 
