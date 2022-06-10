@@ -8,9 +8,9 @@ import { CartService } from 'src/services/cart.service';
   styleUrls: ['./product-col.component.scss']
 })
 export class ProductColComponent {
-  @Input() product!: IProductModel | null;
+  @Input() product: IProductModel | null = null;
   constructor(private cartService: CartService) { }
-  addToCart(product: IProductModel) {
+  public addToCart(product: IProductModel) {
     this.cartService.addToCart(product);
     window.alert('Your product has been added to the cart!');
   }

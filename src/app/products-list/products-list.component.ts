@@ -1,29 +1,20 @@
-import { Component, OnInit, Input , Output,EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IProductModel } from 'src/models/product.model';
 import { ProductService } from 'src/services/product.service';
 import { ActivatedRoute } from '@angular/router';
 @Component({
-    selector: 'products-list',
-    templateUrl: './products-list.component.html',
-    styleUrls: ['./products-list.component.scss']
+  selector: 'products-list',
+  templateUrl: './products-list.component.html',
+  styleUrls: ['./products-list.component.scss']
 })
 export class ProductsListComponent implements OnInit {
-  @Input() product!: IProductModel;
   public products: IProductModel[] = [];
   public selectedPage: number = 1;
   public pageSize: number = 8;
   public currentProduct: IProductModel | null = null;
 
-  @Input('productList') set Data(value: IProductModel[]) {
-    if (value && value.length > 0) {
-      this.products = value.sort((a: IProductModel, b: IProductModel) => a.price - b.price);
-    }
-  }
-
-
-
   constructor(private productService: ProductService, private route: ActivatedRoute,) {
-   }
+  }
 
   ngOnInit(): void {
     console.log(this.route.snapshot.queryParamMap.get('key'));
@@ -32,11 +23,9 @@ export class ProductsListComponent implements OnInit {
 
     this.productService.getList(searchKeywords).subscribe(res => {
       console.log();
-      this.products = res;
+      this.products = (res || []);
+      this.products.sort((a: IProductModel, b: IProductModel) => a.price - b.price);
     });
-
   }
-
-
 
 }

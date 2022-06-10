@@ -6,15 +6,15 @@
 <div class="container-fluid" *ngIf="items.length > 0; else emptyCart">
   <div class="row mt-3" *ngFor="let item of items">
     <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12 border">
-      <img class="card-img-top img-fluid" [src]="item.imageUrl" style="height: 17rem" />
+      <img class="card-img-top " [src]="item.imageUrl" style="height: 17rem" />
     </div>
     <div class="col-lg-9 col-md-8 col-sm-12 col-xs-12 border">
       <h2 class="text-uppercase mt-2">{{ item.name }}</h2>
-      <div class="">
+      <div>
         <product-classify [product]="item"></product-classify>
       </div>
       <div>
-        <p class="">Information of product : {{ item.des }}</p>
+        <p>Information of product : {{ item.des }}</p>
       </div>
       <div class="list-group list-group-horizontal-md">
         <p>Unit Price :</p>
@@ -48,8 +48,8 @@
 
 <!--Display when cart page empty-->
 <ng-template #emptyCart>
-  <div class="container-fluid">
-    <img src="assets/images/emptyCart.jpg" class="rounded mx-auto d-block img-fluid" alt="emptyCart" />
+  <div>
+    <img src="assets/images/emptyCart.jpg" class=" mx-auto d-block img-fluid" alt="emptyCart" />
   </div>
 </ng-template>
 

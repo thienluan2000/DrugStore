@@ -1,10 +1,10 @@
 <div class=" container-fluid mt-5">
     <div class="row" *ngIf="selectedProduct">
-        <div class="list-group list-group-horizontal-md break">
-            <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 border border-info">
+        <div class="list-group list-group-horizontal-md">
+            <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 border ">
                 <img class="card-img-top img-fluid " [src]="selectedProduct.imageUrl" style="height: 31rem;">
             </div>
-            <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 border ms-4 center">
+            <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 border me-4 center">
                 <div>
                     <img src="/assets/images/smallLogo.jpg" class="logo">
                 </div>
@@ -23,11 +23,11 @@
                 <div>
                     <price-display [price]="selectedProduct.price" class="p"></price-display>
                 </div>
-                <div class="d-grid gap-2 col-lg-6 mx-auto">
-                    <a class="btn btn-info btn-lg mt-3" (click)="addToCart(selectedProduct)" id="addProduct">Add product to cart <i
-                            class="bi bi-cart2"></i></a>
+                <div class="d-grid gap-2 col-lg-6 col-md-8 col-sm-8 col-xs-8 mx-auto">
+                    <a class="btn btn-info btn-lg mt-3" (click)="addToCart(selectedProduct)" id="addProduct">Add product
+                        to cart <i class="bi bi-cart2"></i></a>
                 </div>
-                <div class="d-grid gap-2 col-lg-6 mx-auto">
+                <div class="d-grid gap-2 col-lg-6 col-md-8 col-sm-8 col-xs-8 mx-auto">
                     <a href="" class="btn btn-success btn-lg mt-3">Back to ProductList Page <i
                             class="bi bi-backspace"></i></a>
                 </div>
@@ -35,17 +35,3 @@
         </div>
     </div>
 </div>
-
-<div class="toast-container position-fixed bottom-0 end-0 p-3">
-    <div id="addProduct" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-      <div class="toast-header">
-        <img src="..." class="rounded me-2" alt="...">
-        <strong class="me-auto">Bootstrap</strong>
-        <small>11 mins ago</small>
-        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-      </div>
-      <div class="toast-body">
-        Hello, world! This is a toast message.
-      </div>
-    </div>
-  </div>

@@ -8,7 +8,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./search-bar.component.scss']
 })
 export class SearchBarComponent implements OnInit {
-  public productList!: IProductModel[];
   public searchKeywords: string = '';
 
   constructor(

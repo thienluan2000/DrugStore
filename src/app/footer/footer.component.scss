@@ -1,10 +1,15 @@
-.link {
+@mixin color-decor {
     text-decoration: none;
     color: white;
+}
+
+.link {
+    @include color-decor();
     margin-left: 40%;
 }
 
 .link-contact {
-    text-decoration: none;
-    color: white;
+   @include color-decor();
 }
+
+

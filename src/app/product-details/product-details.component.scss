@@ -1,23 +1,20 @@
+$font : 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+$purple : rgb(47, 21, 117);
+
 .classify {
-    color: rgb(47, 21, 117);
+    color: $purple;
     text-transform: uppercase;
-
-}
-
-
-.row {
-    height: 30rem;
 }
 
 .p {
     font-size: 2rem;
     font-weight: 100;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: $font;
 
 }
 
 .h1 {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: $font;
     font-weight: 150;
 
 }
@@ -29,5 +26,4 @@
 
 .center {
     text-align: center;
-
 }

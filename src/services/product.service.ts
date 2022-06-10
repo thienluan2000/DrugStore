@@ -7,7 +7,6 @@ import { ActivatedRoute } from '@angular/router';
 
 @Injectable()
 export class ProductService {
-  productList!: IProductModel[];
   public products: IProductModel[];
   private baseImgUrl: string = '/assets/images';
 
@@ -218,28 +217,13 @@ export class ProductService {
     ];
   }
 
-  public getProductList(): Observable<IProductModel[]> {
-    return of(this.products);
-
-  }
-
   public getProductDetail(id: number): Observable<IProductModel | null> {
     const item: IProductModel | null = (this.products.find(x => x.id === id) || null);
     return of(item);
 
   }
 
-  public getGlobalSearchList(keyword: string) {
-    this.productList = [];
-    this.getProductList().subscribe(value => {
-      this.productList = value.filter((v) => v.name.toLowerCase().indexOf(keyword.toLowerCase()) > -1)
-    });
-    console.log(this.productList);
-    return of(this.productList);
-  }
-
   public getList(keyword: string | null): Observable<IProductModel[]> {
-
     if (keyword === null || keyword === '') {
       return of(this.products);
     }
@@ -248,8 +232,6 @@ export class ProductService {
       return of(products);
     }
   }
-
-
 
 }
 

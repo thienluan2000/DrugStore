@@ -1,26 +1,19 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class=" py-1 px-2 ms-1 mt-3" *ngIf="product">
-      <div class="product card">
-        <div routerLink="product/{{ product.id }}">
-          <product-image [product]="product"></product-image>
-          <div class="text-center">
-            <div class="content">
-              <div class="header text-uppercase">{{ product.name }}</div>
-              <div class="classify">
-                <product-classify [product]="product"></product-classify>
-              </div>
-              <price-display [price]="product.price"></price-display>
-            </div>
+<div id="wrap" *ngIf="product">
+  <div id="container" class=" py-1 px-2 ms-1 mt-3" routerLink="product/{{ product.id }}">
+    <div class="product card ">
+      <product-image [product]="product"></product-image>
+      <div class="text-center">
+        <div class="content">
+          <div class="header text-uppercase">{{ product.name }}</div>
+          <div class="classify">
+            <product-classify [product]="product"></product-classify>
           </div>
+          <price-display [price]="product.price"></price-display>
         </div>
-        <div class="d-grid">
-          <a class="btn btn-info btn-lg" (click)="addToCart(product)"
-            >Add to Cart <i class="bi bi-cart2"></i
-          ></a>
-        </div>
+      </div>
+      <div class="d-grid">
+        <a class="btn btn-info btn-lg" (click)="addToCart(product)">Add to Cart <i class="bi bi-cart2"></i></a>
       </div>
     </div>
   </div>
 </div>
-
