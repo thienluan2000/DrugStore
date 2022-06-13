@@ -15,7 +15,7 @@ export class ProductService {
   ) {
     this.products = [
       {
-        id: 1,
+        id: "MI1",
         name: 'Kit test covid',
         imageUrl: `${this.baseImgUrl}/kittest.jpg`,
         price: 5,
@@ -25,7 +25,7 @@ export class ProductService {
         totalPrice: 5,
       },
       {
-        id: 2,
+        id: "MA2",
         name: 'Mask Famapro VN95',
         imageUrl: `${this.baseImgUrl}/mask.jpg`,
         price: 1,
@@ -35,7 +35,7 @@ export class ProductService {
         totalPrice: 1,
       },
       {
-        id: 3,
+        id: "ME3",
         name: 'Siro Prospan',
         imageUrl: `${this.baseImgUrl}/siro.jpg`,
         price: 10,
@@ -45,7 +45,7 @@ export class ProductService {
         totalPrice: 10,
       },
       {
-        id: 4,
+        id: "ME4",
         name: 'Aspirin',
         imageUrl: `${this.baseImgUrl}/aspirin.jpg`,
         price: 4,
@@ -55,7 +55,7 @@ export class ProductService {
         totalPrice: 4,
       },
       {
-        id: 5,
+        id: "ME5",
         name: 'Eugica',
         imageUrl: `${this.baseImgUrl}/eugica.jpg`,
         price: 7,
@@ -65,7 +65,7 @@ export class ProductService {
         totalPrice: 7,
       },
       {
-        id: 6,
+        id: "ME6",
         name: 'Eve Quick',
         imageUrl: `${this.baseImgUrl}/eve.jpg`,
         price: 4,
@@ -75,7 +75,7 @@ export class ProductService {
         totalPrice: 4,
       },
       {
-        id: 7,
+        id: "ME7",
         name: 'Panadol Extra',
         imageUrl: `${this.baseImgUrl}/panadol.jpg`,
         price: 6,
@@ -85,7 +85,7 @@ export class ProductService {
         totalPrice: 6,
       },
       {
-        id: 8,
+        id: "ME8",
         name: 'Paracetamol',
         imageUrl: `${this.baseImgUrl}/paracetamol.jpg`,
         price: 8,
@@ -95,7 +95,7 @@ export class ProductService {
         totalPrice: 8,
       },
       {
-        id: 9,
+        id: "ME9",
         name: 'Berberin',
         imageUrl: `${this.baseImgUrl}/berberin.jpg`,
         price: 6,
@@ -105,7 +105,7 @@ export class ProductService {
         totalPrice: 6,
       },
       {
-        id: 10,
+        id: "FS10",
         name: 'Berocca',
         imageUrl: `${this.baseImgUrl}/berocca.jpg`,
         price: 7,
@@ -115,7 +115,7 @@ export class ProductService {
         totalPrice: 7,
       },
       {
-        id: 11,
+        id: "ME11",
         name: 'Loperamid',
         imageUrl: `${this.baseImgUrl}/loperamid.jpg`,
         price: 5,
@@ -125,7 +125,7 @@ export class ProductService {
         totalPrice: 5,
       },
       {
-        id: 12,
+        id: "FS12",
         name: 'My VIta',
         imageUrl: `${this.baseImgUrl}/myvita.jpg`,
         price: 3,
@@ -135,7 +135,7 @@ export class ProductService {
         totalPrice: 3,
       },
       {
-        id: 13,
+        id: "FS13",
         name: 'Strepsils',
         imageUrl: `${this.baseImgUrl}/strepsils.jpg`,
         price: 2,
@@ -145,7 +145,7 @@ export class ProductService {
         totalPrice: 2,
       },
       {
-        id: 14,
+        id: "FS14",
         name: 'Vitamin C lozenges',
         imageUrl: `${this.baseImgUrl}/vitaminC.jpg`,
         price: 2,
@@ -155,7 +155,7 @@ export class ProductService {
         totalPrice: 2,
       },
       {
-        id: 15,
+        id: "MA15",
         name: 'GMask',
         imageUrl: `${this.baseImgUrl}/gmask.jpg`,
         price: 1,
@@ -165,7 +165,7 @@ export class ProductService {
         totalPrice: 1,
       },
       {
-        id: 16,
+        id: "MA16",
         name: 'Busrel Mask',
         imageUrl: `${this.baseImgUrl}/busrelmask.jpg`,
         price: 1,
@@ -175,7 +175,7 @@ export class ProductService {
         totalPrice: 1,
       },
       {
-        id: 17,
+        id: "MA17",
         name: 'Urevo Mask',
         imageUrl: `${this.baseImgUrl}/urevomask.jpg`,
         price: 1,
@@ -185,7 +185,7 @@ export class ProductService {
         totalPrice: 1,
       },
       {
-        id: 18,
+        id: "MI18",
         name: 'Wheel chair black',
         imageUrl: `${this.baseImgUrl}/wheelchair.jpg`,
         price: 100,
@@ -195,7 +195,7 @@ export class ProductService {
         totalPrice: 100,
       },
       {
-        id: 19,
+        id: "MI19",
         name: 'Needle',
         imageUrl: `${this.baseImgUrl}/needle.jpg`,
         price: 3,
@@ -205,7 +205,7 @@ export class ProductService {
         totalPrice: 3,
       },
       {
-        id: 20,
+        id: "MI20",
         name: 'Wood Crutch',
         imageUrl: `${this.baseImgUrl}/crutch.jpg`,
         price: 3,
@@ -217,21 +217,26 @@ export class ProductService {
     ];
   }
 
-  public getProductDetail(id: number): Observable<IProductModel | null> {
+  public getProductDetail(id: String): Observable<IProductModel | null> {
     const item: IProductModel | null = (this.products.find(x => x.id === id) || null);
     return of(item);
 
   }
 
-  public getList(keyword: string | null): Observable<IProductModel[]> {
-    if (keyword === null || keyword === '') {
+  public getList(keyword: string | null, maskId: string | null): Observable<IProductModel[]> {
+    if (keyword === null || keyword === '' && maskId === null || maskId === '') {
       return of(this.products);
+    }
+    if(keyword === null || keyword === ''){
+      const products = this.products.filter((v) => v.id.toLowerCase().indexOf(keyword.toLowerCase()) > -1);
+      return of(products);
     }
     else {
       const products = this.products.filter((v) => v.name.toLowerCase().indexOf(keyword.toLowerCase()) > -1);
       return of(products);
     }
   }
+
 
 }
 

@@ -1,6 +1,6 @@
 import { Component, OnInit, HostListener, ElementRef } from '@angular/core';
-
-
+import { ProductService } from 'src/services/product.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
@@ -8,10 +8,10 @@ import { Component, OnInit, HostListener, ElementRef } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
-
+  public maskId: string = 'MA';
   isMenuSmall: boolean = true;
   sideBarOpen: boolean = false;
-  constructor(private el: ElementRef) { }
+  constructor(private el: ElementRef, private productService: ProductService, private router: Router) { }
 
 
   // Your initial click listener on the host element
@@ -48,6 +48,17 @@ export class MenuComponent implements OnInit {
   //     document.getElementsByClassName('sidebar')[0].classList.add('showsidebar');
   //     this.sideBarOpen = true;
   //  }
+
+  public maskList() {
+    const canReload = (window.location.pathname === '/');
+    this.router.navigate(['/'], { queryParams: (this.maskId ? { key: this.maskId } : undefined) }).then(() => {
+      this.maskId = '';
+      if (canReload) {
+        window.location.reload();
+      }
+    });
+  }
+
 
 
 }

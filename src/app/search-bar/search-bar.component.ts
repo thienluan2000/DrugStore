@@ -1,5 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { IProductModel } from '../../models/product.model';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({

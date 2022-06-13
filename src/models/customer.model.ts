@@ -8,10 +8,3 @@ export class ICustomerModel {
   ) { }
 }
 
-// export interface ICustomerModel {
-//   username: string,
-//   password: string,
-//   email: string,
-//   phonenumber: string,
-//   address: string,
-// }

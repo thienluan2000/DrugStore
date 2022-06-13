@@ -1,20 +1,17 @@
-<!-- <button id="collapseBtn" class="nav-link active bi bi-list" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" (click)="toggleSideBar()" >
-  Toggle</button> -->
-
-<div class="">
+<div>
   <a class="nav-link active bi bi-list" id="collapseBtn" data-bs-toggle="collapse" data-bs-target="#collapseExample"
     aria-expanded="false" aria-controls="collapseExample" aria-label="Toggle navigation"> Menu </a>
 
   <div class="showicon">
     <ul class=" navbar-nav flex-column fw-bold px-2">
       <li class="nav-item">
-        <a class="nav-link active bi bi-bandaid" href="#"> </a>
+        <a class="nav-link active bi bi-bandaid"> </a>
       </li>
       <li class="nav-item">
         <a class="nav-link active bi bi-archive" href="#"> </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link active bi bi-ticket" href="#"> </a>
+        <a class="nav-link active bi bi-ticket" (click)="maskList()"> </a>
       </li>
       <li class="nav-item">
         <a class="nav-link active bi bi-eyedropper" href="#"> </a>
@@ -29,13 +26,13 @@
     <div class=" p-1 bd-highlight ">
       <ul class=" navbar-nav flex-column fw-bold px-2">
         <li class="nav-item">
-          <a class="nav-link active " href="#">- Medicine </a>
+          <a class="nav-link active ">- Medicine </a>
         </li>
         <li class="nav-item">
           <a class="nav-link active" href="#">- Food supplement </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="#">- Mask </a>
+          <a class="nav-link active" (click)="maskList()">- Mask </a>
         </li>
         <li class="nav-item">
           <a class="nav-link active " href="#">- Medical instruments </a>

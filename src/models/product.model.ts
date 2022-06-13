@@ -1,7 +1,7 @@
 import { ICartModel } from "./cart.model";
 
 export interface IProductModel extends ICartModel {
-  id: number,
+  id: string,
   name: string,
   imageUrl: string,
   price: number,

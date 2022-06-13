@@ -19,9 +19,10 @@ export class ProductsListComponent implements OnInit {
   ngOnInit(): void {
     console.log(this.route.snapshot.queryParamMap.get('key'));
     const searchKeywords = this.route.snapshot.queryParamMap.get('key');
-    console.log(searchKeywords);
+    const maskId = this.route.snapshot.queryParamMap.get('maskId');
+    console.log(searchKeywords,maskId);
 
-    this.productService.getList(searchKeywords).subscribe(res => {
+    this.productService.getList(searchKeywords,maskId).subscribe(res => {
       console.log();
       this.products = (res || []);
       this.products.sort((a: IProductModel, b: IProductModel) => a.price - b.price);
