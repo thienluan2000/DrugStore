@@ -20,7 +20,7 @@
                 </div>
                 <div class="text-center">
                     <button type="submit"
-                        class="btn btn-info btn-lg mt-4 mx-auto d-grid gap-2 col-lg-12 col-md-12 col-sm-12 col-12 rounded-pill">SignIn</button>
+                        class="btn btn-info btn-lg mt-4 mx-auto d-grid gap-2 col-lg-12 col-md-12 col-sm-12 col-12 rounded-pill" (click)="showNotification()">SignIn</button>
                     <button type="button"
                         class="btn btn-secondary btn-lg mt-4 mx-auto mb-4 d-grid gap-2 col-lg-12 col-md-12 col-sm-12 col-12 rounded-pill"
                         (click)="signUp()">Create Account</button>
@@ -30,4 +30,14 @@
             <div class="col-md-4 col-sm-2 col-2"></div>
         </div>
     </form>
+</div>
+
+<div class="row">
+  <div class="col-md-4 col-sm-2 col-2 "></div>
+  <div class="col-md-4 col-sm-8 col-8 ">
+    <div class="notification">
+      <h4>{{notification}}</h4>
+    </div>
+  </div>
+  <div class="col-md-4 col-sm-2 col-2"></div>
 </div>
