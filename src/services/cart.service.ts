@@ -6,7 +6,6 @@ import { ICustomerModel } from 'src/models/customer.model';
 })
 export class CartService {
   private cartItems: IProductModel[] = [];
-  information!: ICustomerModel;
   constructor() { }
 
   //Function add product from list to cart
@@ -69,10 +68,16 @@ export class CartService {
 
   //Function Save information of customer without login
   public saveInformation(information: ICustomerModel) {
-    localStorage.setItem('information', JSON.stringify(information));
-    console.log("SignUp success", information);
-    window.alert("Order Success");
-    this.clearCart();
+    const checkCondition = information.username === null || information.username === '' || information.phonenumber === null || information.phonenumber === '' || information.address === null || information.address === '';
+    if (checkCondition) {
+      window.alert("Order fail");
+    }
+    else {
+      localStorage.setItem('information', JSON.stringify(information));
+      console.log("SignUp success", information);
+      window.alert("Order Success");
+      this.clearCart();
+    }
   }
 
 }

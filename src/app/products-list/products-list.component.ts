@@ -17,13 +17,11 @@ export class ProductsListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.route.snapshot.queryParamMap.get('key'));
     const searchKeywords = this.route.snapshot.queryParamMap.get('key');
-    const maskId = this.route.snapshot.queryParamMap.get('maskId');
-    console.log(searchKeywords,maskId);
+    const typeId = this.route.snapshot.queryParamMap.get('keyId');
+    console.log(searchKeywords,typeId);
 
-    this.productService.getList(searchKeywords,maskId).subscribe(res => {
-      console.log();
+    this.productService.getList(searchKeywords,typeId).subscribe(res => {
       this.products = (res || []);
       this.products.sort((a: IProductModel, b: IProductModel) => a.price - b.price);
     });

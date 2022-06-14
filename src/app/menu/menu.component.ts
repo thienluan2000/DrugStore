@@ -8,7 +8,8 @@ import { Router } from '@angular/router';
 })
 export class MenuComponent implements OnInit {
 
-  public maskId: string = 'MA';
+  public typeId: string = 'mi';
+ 
   isMenuSmall: boolean = true;
   sideBarOpen: boolean = false;
   constructor(private el: ElementRef, private productService: ProductService, private router: Router) { }
@@ -49,15 +50,16 @@ export class MenuComponent implements OnInit {
   //     this.sideBarOpen = true;
   //  }
 
-  public maskList() {
+  public typeList() {
     const canReload = (window.location.pathname === '/');
-    this.router.navigate(['/'], { queryParams: (this.maskId ? { key: this.maskId } : undefined) }).then(() => {
-      this.maskId = '';
+    this.router.navigate(['/'], { queryParams: (this.typeId ? { keyId: this.typeId } : undefined) }).then(() => {
+      this.typeId = '';
       if (canReload) {
         window.location.reload();
-      }
+      } 
     });
   }
+
 
 
 

@@ -223,16 +223,37 @@ export class ProductService {
 
   }
 
-  public getList(keyword: string | null, maskId: string | null): Observable<IProductModel[]> {
-    if (keyword === null || keyword === '' && maskId === null || maskId === '') {
+  // public getList(keyword: string | null, typeId: string | null): Observable<IProductModel[]> {
+  //   if (keyword === null || keyword === '' && typeId === null || typeId === '') {
+  //     return of(this.products);
+  //   }
+  //   else if (keyword === null || keyword === '' && typeId != null || typeId != '') {
+  //     window.alert("failllllll");
+  //     const products = this.products.filter((v) => v.name.toLowerCase().indexOf(keyword.toLowerCase()) > -1);
+  //     console.log(keyword,typeId);
+  //     return of(products);
+  //   }
+  //   else {
+  //     const products = this.products.filter((v) => v.name.toLowerCase().indexOf(typeId.toLowerCase()) > -1);
+  //     console.log(keyword,typeId);
+  //     return of(products);
+  //   }
+  // }
+
+
+    public getList(keyword: string | null, typeId: string|null): Observable<IProductModel[]> {
+    if (keyword === null || keyword === '' && typeId === null || typeId === '') {
       return of(this.products);
     }
-    if(keyword === null || keyword === ''){
-      const products = this.products.filter((v) => v.id.toLowerCase().indexOf(keyword.toLowerCase()) > -1);
-      return of(products);
+    else if ( typeId === null || typeId === '' && keyword != null || keyword != '') {
+      window.alert("failllllll");
+      const products = this.products.filter((v) => v.name.toLowerCase().indexOf(keyword.toLowerCase()) > -1);
+      console.log(keyword,typeId);
+      return of(products);  
     }
     else {
-      const products = this.products.filter((v) => v.name.toLowerCase().indexOf(keyword.toLowerCase()) > -1);
+      const products = this.products.filter((v) => v.id.toLowerCase().indexOf(typeId.toLowerCase()) > -1);
+      console.log(keyword,typeId);
       return of(products);
     }
   }
