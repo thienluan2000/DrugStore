@@ -6,6 +6,7 @@ import { ICustomerModel } from 'src/models/customer.model';
 export class CustomerService {
   customer!: ICustomerModel;
   guest!: ICustomerModel;
+  notification: string = "";
   constructor() {
   }
 
@@ -28,8 +29,17 @@ export class CustomerService {
       window.alert("Login success")
     }
     else {
-      window.alert("Username or Password has wrong!");
+      this.showNotification();
+      console.log(this.notification);
     }
   }
+
+  public showNotification() {
+    this.notification = "Login Fail!";
+    // setTimeout(() => {
+    //   this.notification = "";
+    // }, 3000);
+  }
+
 
 }

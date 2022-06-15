@@ -10,17 +10,25 @@
             <div class="col-md-4 col-sm-8 col-8 ">
                 <div class="form-floating mb-3">
                     <input type="text" class="form-control rounded-pill" id="username" placeholder="Username"
-                        name="username" [(ngModel)]="guest.username">
+                        name="username" [(ngModel)]="guest.username" required minlength="8" #inputUserName="ngModel">
                     <label for="username" class="h5">Username</label>
+                    <div class="alert alert-danger mt-2"
+                    *ngIf="!inputUserName.valid && (!inputUserName.pristine || signInForm.submitted)">
+                    <small>Username is required or Wrong</small>
+                  </div>
                 </div>
                 <div class="form-floating mb-3">
                     <input type="password" class="form-control rounded-pill" id="password" placeholder="Password"
-                        name="password" [(ngModel)]="guest.password">
+                        name="password" [(ngModel)]="guest.password" required minlength="8" #inputPassword="ngModel">
                     <label for="password" class="h5 ">Password</label>
+                    <div class="alert alert-danger mt-2"
+                    *ngIf="!inputPassword.valid && (!inputPassword.pristine || signInForm.submitted)">
+                    <small>Password is required or Wrong</small>
+                    </div>
                 </div>
                 <div class="text-center">
                     <button type="submit"
-                        class="btn btn-info btn-lg mt-4 mx-auto d-grid gap-2 col-lg-12 col-md-12 col-sm-12 col-12 rounded-pill" (click)="showNotification()">SignIn</button>
+                        class="btn btn-info btn-lg mt-4 mx-auto d-grid gap-2 col-lg-12 col-md-12 col-sm-12 col-12 rounded-pill">SignIn</button>
                     <button type="button"
                         class="btn btn-secondary btn-lg mt-4 mx-auto mb-4 d-grid gap-2 col-lg-12 col-md-12 col-sm-12 col-12 rounded-pill"
                         (click)="signUp()">Create Account</button>
