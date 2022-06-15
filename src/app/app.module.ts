@@ -6,6 +6,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -26,6 +27,8 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { CartComponent } from './cart/cart.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { ProductTypeComponent } from './product-type/product-type.component';
+import { ToasterComponent } from './toaster/toaster.component';
+import { ToastComponent } from './toast/toast.component';
 
 @NgModule({
     declarations: [
@@ -46,6 +49,9 @@ import { ProductTypeComponent } from './product-type/product-type.component';
         CartComponent,
         SignInComponent,
         ProductTypeComponent,
+        ToasterComponent,
+        ToastComponent,
+
 
 
     ],
