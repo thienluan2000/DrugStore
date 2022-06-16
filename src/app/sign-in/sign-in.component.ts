@@ -23,7 +23,7 @@ export class SignInComponent implements OnInit {
 
   public signIn(guest: ICustomerModel) {
     this.customerService.signIn(guest);
-    console.log(this.notification);
   }
+
 
 }

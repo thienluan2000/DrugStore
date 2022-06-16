@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ICustomerModel } from 'src/models/customer.model';
+import { NotificationService } from './notification.service';
 @Injectable({
   providedIn: 'root'
 })
@@ -7,7 +8,7 @@ export class CustomerService {
   customer!: ICustomerModel;
   guest!: ICustomerModel;
   notification: string = "";
-  constructor() {
+  constructor(private notifyService: NotificationService) {
   }
 
   public signUp(customer: ICustomerModel) {
@@ -15,10 +16,10 @@ export class CustomerService {
     if (checkCondition) {
       localStorage.setItem('customer', JSON.stringify(customer));
       console.log("SignUp success", customer);
-      window.alert("Sign Up Success");
+      this.showSingUpSuccess();
     }
     else {
-      console.log('SignUp fail');
+      this.showSingUpFail();
     }
   }
 
@@ -26,20 +27,28 @@ export class CustomerService {
     this.customer = JSON.parse(localStorage.getItem('customer') || '{}');
     const checkCondition = this.customer.username === guest.username && this.customer.password === guest.password;
     if (checkCondition) {
-      window.alert("Login success")
+      this.showLoginSuccess();
     }
     else {
-      this.showNotification();
+      this.showLoginFail();
       console.log(this.notification);
     }
   }
 
-  public showNotification() {
-    this.notification = "Login Fail!";
-    // setTimeout(() => {
-    //   this.notification = "";
-    // }, 3000);
+  showLoginFail() {
+    this.notifyService.showError("Username or Password is not correct!", "Login Fail");
   }
 
+  showLoginSuccess() {
+    this.notifyService.showSuccess("You have login success !", "Login Success");
+  }
+
+  showSingUpSuccess(){
+    this.notifyService.showSuccess("You have Sign Up success !", "Sign Up Success");
+  }
+
+  showSingUpFail(){
+    this.notifyService.showError("You have Sign Up Fail !", "Sign Up Fail");
+  }
 
 }

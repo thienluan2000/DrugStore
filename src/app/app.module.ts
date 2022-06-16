@@ -3,7 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 
 
@@ -27,9 +29,6 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { CartComponent } from './cart/cart.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { ProductTypeComponent } from './product-type/product-type.component';
-import { ToasterComponent } from './toaster/toaster.component';
-import { ToastComponent } from './toast/toast.component';
-
 @NgModule({
     declarations: [
         AppComponent,
@@ -49,8 +48,6 @@ import { ToastComponent } from './toast/toast.component';
         CartComponent,
         SignInComponent,
         ProductTypeComponent,
-        ToasterComponent,
-        ToastComponent,
 
 
 
@@ -63,6 +60,8 @@ import { ToastComponent } from './toast/toast.component';
         FormsModule,
         ReactiveFormsModule,
         RouterModule,
+        BrowserAnimationsModule,
+        ToastrModule.forRoot()
 
     ],
     providers: [
