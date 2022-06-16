@@ -31,7 +31,6 @@ export class CustomerService {
     }
     else {
       this.showLoginFail();
-      console.log(this.notification);
     }
   }
 

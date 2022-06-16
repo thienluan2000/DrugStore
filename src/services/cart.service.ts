@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { IProductModel } from 'src/models/product.model';
 import { ICustomerModel } from 'src/models/customer.model';
+import { NotificationService } from './notification.service';
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
   private cartItems: IProductModel[] = [];
-  constructor() { }
+  constructor(private notifyService: NotificationService) { }
 
   //Function add product from list to cart
   public addToCart(product: IProductModel) {
@@ -15,9 +16,11 @@ export class CartService {
       product.quantity++;
       product.totalPrice = product.price * product.quantity;
       localStorage.setItem('key', JSON.stringify(this.cartItems));
+      this.addProductSuccess();
     } else {
       this.cartItems.push(product);
       localStorage.setItem('key', JSON.stringify(this.cartItems));
+      this.addProductSuccess();
     }
   }
 
@@ -70,14 +73,29 @@ export class CartService {
   public saveInformation(information: ICustomerModel) {
     const checkCondition = information.username === null || information.username === '' || information.phonenumber === null || information.phonenumber === '' || information.address === null || information.address === '';
     if (checkCondition) {
-      window.alert("Order fail");
+      this.saveInfFail();
     }
     else {
       localStorage.setItem('information', JSON.stringify(information));
       console.log("SignUp success", information);
-      window.alert("Order Success");
+      this.saveInfSuccess();
       this.clearCart();
     }
   }
 
+  updatePriceSuccess() {
+    this.notifyService.showSuccess("The price of product has been updated !", "Price Update");
+  }
+
+  saveInfFail(){
+    this.notifyService.showError("You not fill enough information!","Error information")
+  }
+
+  saveInfSuccess(){
+    this.notifyService.showSuccess("Order success!","Check information")
+  }
+
+  addProductSuccess(){
+    this.notifyService.showSuccess("Your product has been added to the cart!","Add Product Success")
+  }
 }

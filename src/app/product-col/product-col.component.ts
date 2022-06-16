@@ -12,7 +12,6 @@ export class ProductColComponent {
   constructor(private cartService: CartService) { }
   public addToCart(product: IProductModel) {
     this.cartService.addToCart(product);
-    window.alert('Your product has been added to the cart!');
   }
 
 

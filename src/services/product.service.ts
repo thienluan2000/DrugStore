@@ -246,10 +246,9 @@ export class ProductService {
       return of(this.products);
     }
     else if ( typeId === null || typeId === '' && keyword != null || keyword != '') {
-      window.alert("failllllll");
       const products = this.products.filter((v) => v.name.toLowerCase().indexOf(keyword.toLowerCase()) > -1);
       console.log(keyword,typeId);
-      return of(products);  
+      return of(products);
     }
     else {
       const products = this.products.filter((v) => v.id.toLowerCase().indexOf(typeId.toLowerCase()) > -1);

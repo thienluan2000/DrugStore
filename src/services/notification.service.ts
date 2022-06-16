@@ -9,11 +9,15 @@ export class NotificationService {
     constructor(private toastrService: ToastrService) { }
 
     showError(message: any, title: any) {
-        this.toastrService.error(message, title)
+        this.toastrService.error(message, title,{
+          timeOut : 2000
+        })
     }
 
     showSuccess(message: any, title: any) {
-        this.toastrService.success(message, title)
+        this.toastrService.success(message, title,{
+          timeOut : 2000
+        })
     }
 
 }
