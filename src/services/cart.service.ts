@@ -16,11 +16,11 @@ export class CartService {
       product.quantity++;
       product.totalPrice = product.price * product.quantity;
       localStorage.setItem('key', JSON.stringify(this.cartItems));
-      this.addProductSuccess();
+      this.notifyService.showSuccess(product.name + " has been added to cart", "Add Product Success!");
     } else {
       this.cartItems.push(product);
       localStorage.setItem('key', JSON.stringify(this.cartItems));
-      this.addProductSuccess();
+      this.notifyService.showSuccess(product.name + " has been added to cart", "Add Product Success!");
     }
   }
 
@@ -35,8 +35,8 @@ export class CartService {
       if (value == key) {
         this.cartItems.splice(index, 1);
         localStorage.setItem('key', JSON.stringify(this.cartItems));
-        this.removeSuccess();
-      //window.location.reload();
+        this.notifyService.showSuccess(key.name + " has been removed", "Remove Success")
+        //window.location.reload();
       }
     });
   }
@@ -55,9 +55,8 @@ export class CartService {
       product.totalPrice = product.price * product.quantity;
       Object.assign(existedItem, product);
       localStorage.setItem('key', JSON.stringify(this.cartItems));
-      this.updatePriceSuccess();
-      //window.location.reload();
-      //window.setTimeout(function(){location.reload()},2000)
+      this.notifyService.showSuccess("The price of " + product.name + " has been updated !", "Price Update");
+      window.setTimeout(function(){location.reload()},1000)
     }
     else {
       console.log("you fail", product);
@@ -76,34 +75,14 @@ export class CartService {
   public saveInformation(information: ICustomerModel) {
     const checkCondition = information.username === null || information.username === '' || information.phonenumber === null || information.phonenumber === '' || information.address === null || information.address === '';
     if (checkCondition) {
-      this.saveInfFail();
+      this.notifyService.showError("You not fill enough information!", "Error information")
     }
     else {
       localStorage.setItem('information', JSON.stringify(information));
       console.log("SignUp success", information);
-      this.saveInfSuccess();
+      this.notifyService.showSuccess("Order success!", "Check information")
       this.clearCart();
     }
-  }
-
-  updatePriceSuccess() {
-    this.notifyService.showSuccess("The price of product has been updated !", "Price Update");
-  }
-
-  saveInfFail(){
-    this.notifyService.showError("You not fill enough information!","Error information")
-  }
-
-  saveInfSuccess(){
-    this.notifyService.showSuccess("Order success!","Check information")
-  }
-
-  addProductSuccess(){
-    this.notifyService.showSuccess("Your product has been added to the cart!","Add Product Success")
-  }
-
-  removeSuccess(){
-    this.notifyService.showSuccess("Your product you choose has been removed","Remove Success")
   }
 
 }

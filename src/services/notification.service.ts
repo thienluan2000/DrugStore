@@ -10,7 +10,7 @@ export class NotificationService {
 
   showError(message: any, title: any) {
     this.toastrService.error(message, title, {
-      timeOut: 2000
+      timeOut: 2000,
     })
   }
 

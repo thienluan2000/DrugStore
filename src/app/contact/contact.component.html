@@ -1,4 +1,32 @@
 <h1 class="tittle">
-    <span class="badge bg-info rounded-pill">
-      <i class="bi bi-bag"></i> Please Contact with me here</span>
-  </h1>
+  <span class="badge bg-info rounded-pill">
+    <i class="bi bi-telephone"></i> Please Contact with me here</span>
+</h1>
+
+<div class="container-fluid">
+  <form #contactForm="ngForm" class="row">
+    <div class=" col-lg-2 col-md-2 col-sm-2 col-1"></div>
+    <div class="col-lg-8 col-md-8 col-sm-8 col-10">
+      <div class="mb-2">
+        <label for="username" class="h5">Your Name</label>
+        <input type="text" class="form-control" id="username" placeholder="Input your name here" name="username" />
+      </div>
+      <div class="mb-2">
+        <label for="phoneNumber" class="h5">PhoneNumber</label>
+        <input type="number" class="form-control" id="phoneNumber" placeholder="Input your phonenumber here" pattern="[0-9]*"
+          name="phonenumber" />
+      </div>
+      <div class="mb-2">
+        <label for="address" class="h5">Why you want to contact:</label>
+        <input type="text" class="form-control inputBig" id="address"  name="address" />
+      </div>
+      <div class="mt-3">
+        <button type="Submit" class="btn btn-outline-info">Submit</button>
+        <button type="reset" class="btn btn-outline-danger ms-3">
+          Cancel
+        </button>
+      </div>
+    </div>
+    <div class="col-lg-2 col-md-2 col-sm-2 col-1"></div>
+  </form>
+</div>
