@@ -8,7 +8,6 @@ import { CustomerService } from 'src/services/customer.service';
   styleUrls: ['./sign-in.component.scss']
 })
 export class SignInComponent implements OnInit {
-  notification = this.customerService.notification;
   guest!: ICustomerModel;
   constructor(private router: Router, private customerService: CustomerService) {
     this.guest = new ICustomerModel('', '', '', '', '',);

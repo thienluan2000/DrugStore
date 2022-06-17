@@ -48,12 +48,20 @@
       <div class="mb-2">
         <label for="phoneNumber" class="h5">PhoneNumber</label>
         <input type="number" class="form-control" id="phoneNumber" placeholder="Input your phonenumber" pattern="[0-9]*"
-          name="phonenumber" [(ngModel)]="customer.phonenumber" />
+          name="phonenumber" [(ngModel)]="customer.phonenumber" required minlength="9" #inputPhonenumber="ngModel"/>
+          <div class="alert alert-danger mt-2"
+          *ngIf="!inputPhonenumber.valid && (!inputPhonenumber.pristine || signUpForm.submitted)">
+          <small>PhoneNumber is required and must have more than 9 characters</small>
+        </div>
       </div>
       <div class="mb-2">
         <label for="address" class="h5">Address</label>
         <input type="text" class="form-control" id="address" placeholder="Input your Address" name="address"
-          [(ngModel)]="customer.address" />
+          [(ngModel)]="customer.address" required minlength="4" #inputAddress="ngModel" />
+          <div class="alert alert-danger mt-2"
+          *ngIf="!inputAddress.valid && (!inputAddress.pristine || signUpForm.submitted)">
+          <small>Address is required</small>
+        </div>
       </div>
       <div>
         <button type="Submit" class="btn btn-outline-info">Sign Up</button>

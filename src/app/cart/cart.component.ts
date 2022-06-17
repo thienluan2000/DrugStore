@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CartService } from 'src/services/cart.service';
 import { IProductModel } from 'src/models/product.model';
 import { ICustomerModel } from 'src/models/customer.model';
+import { NotificationService } from 'src/services/notification.service';
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
@@ -12,7 +13,7 @@ export class CartComponent implements OnInit {
   items = this.cartService.getItems();
   totalBill = this.cartService.countBill();
   item!: IProductModel | null;
-  constructor(private cartService: CartService) { }
+  constructor(private cartService: CartService,private notifyService: NotificationService) { }
 
   ngOnInit(): void {
     this.information = new ICustomerModel('', '', '', '', '',);
@@ -26,8 +27,8 @@ export class CartComponent implements OnInit {
     this.cartService.removeProduct(item);
   }
 
-  alertQuantity(): void {
-    alert("If you change the Quantity , Please click Update TotalPrice Button to update the new total price ");
+  alertQuantity(){
+    this.notifyService.showWarning("If you change the Quantity , Please click Update TotalPrice Button to update the new total price","Warning!");
   }
 
   updateTotalPrice(item: IProductModel) {

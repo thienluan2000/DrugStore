@@ -35,7 +35,8 @@ export class CartService {
       if (value == key) {
         this.cartItems.splice(index, 1);
         localStorage.setItem('key', JSON.stringify(this.cartItems));
-        window.location.reload();
+        this.removeSuccess();
+      //window.location.reload();
       }
     });
   }
@@ -54,7 +55,9 @@ export class CartService {
       product.totalPrice = product.price * product.quantity;
       Object.assign(existedItem, product);
       localStorage.setItem('key', JSON.stringify(this.cartItems));
-      window.location.reload();
+      this.updatePriceSuccess();
+      //window.location.reload();
+      //window.setTimeout(function(){location.reload()},2000)
     }
     else {
       console.log("you fail", product);
@@ -98,4 +101,9 @@ export class CartService {
   addProductSuccess(){
     this.notifyService.showSuccess("Your product has been added to the cart!","Add Product Success")
   }
+
+  removeSuccess(){
+    this.notifyService.showSuccess("Your product you choose has been removed","Remove Success")
+  }
+
 }

@@ -7,7 +7,6 @@ import { NotificationService } from './notification.service';
 export class CustomerService {
   customer!: ICustomerModel;
   guest!: ICustomerModel;
-  notification: string = "";
   constructor(private notifyService: NotificationService) {
   }
 
@@ -42,11 +41,11 @@ export class CustomerService {
     this.notifyService.showSuccess("You have login success !", "Login Success");
   }
 
-  showSingUpSuccess(){
+  showSingUpSuccess() {
     this.notifyService.showSuccess("You have Sign Up success !", "Sign Up Success");
   }
 
-  showSingUpFail(){
+  showSingUpFail() {
     this.notifyService.showError("You have Sign Up Fail !", "Sign Up Fail");
   }
 
