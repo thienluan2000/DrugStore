@@ -15,10 +15,10 @@ export class CustomerService {
     if (checkCondition) {
       localStorage.setItem('customer', JSON.stringify(customer));
       console.log("SignUp success", customer);
-      this.showSingUpSuccess();
+      this.notifyService.showSuccess("You have Sign Up success !", "Sign Up Success");
     }
     else {
-      this.showSingUpFail();
+      this.notifyService.showError("You have Sign Up Fail !", "Sign Up Fail");
     }
   }
 
@@ -26,27 +26,12 @@ export class CustomerService {
     this.customer = JSON.parse(localStorage.getItem('customer') || '{}');
     const checkCondition = this.customer.username === guest.username && this.customer.password === guest.password;
     if (checkCondition) {
-      this.showLoginSuccess();
+      this.notifyService.showSuccess("You have login success !", "Login Success");
     }
     else {
-      this.showLoginFail();
+      this.notifyService.showError("Username or Password is not correct!", "Login Fail");
     }
   }
 
-  showLoginFail() {
-    this.notifyService.showError("Username or Password is not correct!", "Login Fail");
-  }
-
-  showLoginSuccess() {
-    this.notifyService.showSuccess("You have login success !", "Login Success");
-  }
-
-  showSingUpSuccess() {
-    this.notifyService.showSuccess("You have Sign Up success !", "Sign Up Success");
-  }
-
-  showSingUpFail() {
-    this.notifyService.showError("You have Sign Up Fail !", "Sign Up Fail");
-  }
 
 }

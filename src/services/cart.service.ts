@@ -36,7 +36,6 @@ export class CartService {
         this.cartItems.splice(index, 1);
         localStorage.setItem('key', JSON.stringify(this.cartItems));
         this.notifyService.showSuccess(key.name + " has been removed", "Remove Success")
-        //window.location.reload();
       }
     });
   }
@@ -56,7 +55,7 @@ export class CartService {
       Object.assign(existedItem, product);
       localStorage.setItem('key', JSON.stringify(this.cartItems));
       this.notifyService.showSuccess("The price of " + product.name + " has been updated !", "Price Update");
-      window.setTimeout(function(){location.reload()},1000)
+      window.setTimeout(function () { location.reload() }, 1000)
     }
     else {
       console.log("you fail", product);
