@@ -12,19 +12,19 @@ export class ProductsListComponent implements OnInit {
   public selectedPage: number = 1;
   public pageSize: number = 8;
   public currentProduct: IProductModel | null = null;
-
   constructor(private productService: ProductService, private route: ActivatedRoute,) {
   }
 
   ngOnInit(): void {
-    const searchKeywords = this.route.snapshot.queryParamMap.get('key');
-    const typeId = this.route.snapshot.queryParamMap.get('keyId');
-    console.log(searchKeywords,typeId);
+      const searchKeywords = this.route.snapshot.queryParamMap.get('key');
+      const typeId = this.route.snapshot.queryParamMap.get('keyId');
+      console.log(searchKeywords,typeId);
 
-    this.productService.getList(searchKeywords,typeId).subscribe(res => {
-      this.products = (res || []);
-      this.products.sort((a: IProductModel, b: IProductModel) => a.price - b.price);
-    });
-  }
+      this.productService.getList(searchKeywords,typeId).subscribe(res => {
+        this.products = (res || []);
+        this.products.sort((a: IProductModel, b: IProductModel) => a.price - b.price);
+      });
+    }
+
 
 }

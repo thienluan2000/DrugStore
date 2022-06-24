@@ -13,14 +13,12 @@ export class SearchBarComponent implements OnInit {
     private router: Router) {
   }
   ngOnInit(): void {
-
   }
 
   public doSearch() {
     const canReload = (window.location.pathname === '/');
     this.router.navigate(['/'], { queryParams: (this.searchKeywords ? { key: this.searchKeywords } : undefined) }).then(() => {
       this.searchKeywords = '';
-
       if (canReload) {
         window.location.reload();
       }

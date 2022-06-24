@@ -223,40 +223,23 @@ export class ProductService {
 
   }
 
-  // public getList(keyword: string | null, typeId: string | null): Observable<IProductModel[]> {
-  //   if (keyword === null || keyword === '' && typeId === null || typeId === '') {
-  //     return of(this.products);
-  //   }
-  //   else if (keyword === null || keyword === '' && typeId != null || typeId != '') {
-  //     window.alert("failllllll");
-  //     const products = this.products.filter((v) => v.name.toLowerCase().indexOf(keyword.toLowerCase()) > -1);
-  //     console.log(keyword,typeId);
-  //     return of(products);
-  //   }
-  //   else {
-  //     const products = this.products.filter((v) => v.name.toLowerCase().indexOf(typeId.toLowerCase()) > -1);
-  //     console.log(keyword,typeId);
-  //     return of(products);
-  //   }
-  // }
 
-
-    public getList(keyword: string | null, typeId: string|null): Observable<IProductModel[]> {
+  public getList(keyword: string | null, typeId: string | null): Observable<IProductModel[]> {
     if (keyword === null || keyword === '' && typeId === null || typeId === '') {
+      console.log(keyword, typeId,"0")
       return of(this.products);
     }
-    else if ( typeId === null || typeId === '' && keyword != null || keyword != '') {
-      const products = this.products.filter((v) => v.name.toLowerCase().indexOf(keyword.toLowerCase()) > -1);
-      console.log(keyword,typeId);
+    else if (typeId != null || typeId != '' && keyword === null || keyword === '') {
+      const products = this.products.filter((v) => v.id.toLowerCase().indexOf(typeId!.toLowerCase()) > -1);
+      console.log(keyword, typeId, "1");
       return of(products);
     }
     else {
-      const products = this.products.filter((v) => v.id.toLowerCase().indexOf(typeId.toLowerCase()) > -1);
-      console.log(keyword,typeId);
+      const products = this.products.filter((v) => v.name.toLowerCase().indexOf(keyword.toLowerCase()) > -1);
+      console.log(keyword, typeId, "2");
       return of(products);
     }
   }
-
 
 }
 

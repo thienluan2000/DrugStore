@@ -14,7 +14,6 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { MenuComponent } from './menu/menu.component';
 import { ProductsListComponent } from './products-list/products-list.component';
 import { ProductColComponent } from './product-col/product-col.component';
 import { ProductImageComponent } from './product-image/product-image.component';
@@ -28,45 +27,42 @@ import { ContactComponent } from './contact/contact.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { CartComponent } from './cart/cart.component';
 import { SignInComponent } from './sign-in/sign-in.component';
-import { ProductTypeComponent } from './product-type/product-type.component';
 @NgModule({
-    declarations: [
-        AppComponent,
-        HeaderComponent,
-        SearchBarComponent,
-        NavbarComponent,
-        MenuComponent,
-        ProductsListComponent,
-        ProductColComponent,
-        ProductImageComponent,
-        PriceDisplayComponent,
-        ProductClassifyComponent,
-        ProductDetailsComponent,
-        FooterComponent,
-        ContactComponent,
-        SignUpComponent,
-        CartComponent,
-        SignInComponent,
-        ProductTypeComponent,
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    SearchBarComponent,
+    NavbarComponent,
+    ProductsListComponent,
+    ProductColComponent,
+    ProductImageComponent,
+    PriceDisplayComponent,
+    ProductClassifyComponent,
+    ProductDetailsComponent,
+    FooterComponent,
+    ContactComponent,
+    SignUpComponent,
+    CartComponent,
+    SignInComponent,
 
 
 
-    ],
-    imports: [
-        BrowserModule,
-        HttpClientModule,
-        AppRoutingModule,
-        NgxPaginationModule,
-        FormsModule,
-        ReactiveFormsModule,
-        RouterModule,
-        BrowserAnimationsModule,
-        ToastrModule.forRoot()
+  ],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    AppRoutingModule,
+    NgxPaginationModule,
+    FormsModule,
+    ReactiveFormsModule,
+    RouterModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
 
-    ],
-    providers: [
-        ProductService
-    ],
-    bootstrap: [AppComponent]
+  ],
+  providers: [
+    ProductService
+  ],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
