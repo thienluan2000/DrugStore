@@ -19,7 +19,7 @@ export class ProductService {
         name: 'Kit test covid',
         imageUrl: `${this.baseImgUrl}/kittest.jpg`,
         price: 5,
-        classify: ['Medical instruments', 'Kittest'],
+        classify: ['Medical Instruments', 'Kittest'],
         des: 'This is kit test covid From USA',
         quantity: 1,
         totalPrice: 5,
@@ -226,17 +226,17 @@ export class ProductService {
 
   public getList(keyword: string | null, typeId: string | null): Observable<IProductModel[]> {
     if (keyword === null || keyword === '' && typeId === null || typeId === '') {
-      console.log(keyword, typeId,"0")
+      console.log(keyword, typeId)
       return of(this.products);
     }
-    else if (typeId != null || typeId != '' && keyword === null || keyword === '') {
-      const products = this.products.filter((v) => v.id.toLowerCase().indexOf(typeId!.toLowerCase()) > -1);
-      console.log(keyword, typeId, "1");
+    if (typeId != null || typeId != '' && keyword === null || keyword === '') {
+      const products = this.products.filter((v) => v.classify.indexOf(typeId!) > -1);
+      console.log(keyword, typeId);
       return of(products);
     }
     else {
       const products = this.products.filter((v) => v.name.toLowerCase().indexOf(keyword.toLowerCase()) > -1);
-      console.log(keyword, typeId, "2");
+      console.log(keyword, typeId);
       return of(products);
     }
   }

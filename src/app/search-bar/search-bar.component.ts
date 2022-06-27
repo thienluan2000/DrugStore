@@ -7,8 +7,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./search-bar.component.scss']
 })
 export class SearchBarComponent implements OnInit {
-  public searchKeywords: string = '';
-
+  public searchKeywords: string | null = null;
+  public type: string | null = null;
   constructor(
     private router: Router) {
   }
@@ -17,13 +17,18 @@ export class SearchBarComponent implements OnInit {
 
   public doSearch() {
     const canReload = (window.location.pathname === '/');
-    this.router.navigate(['/'], { queryParams: (this.searchKeywords ? { key: this.searchKeywords } : undefined) }).then(() => {
+    this.router.navigate(['/'], { queryParams: (this.searchKeywords ? { key: this.searchKeywords, keyId: this.type } : undefined) }).then(() => {
       this.searchKeywords = '';
       if (canReload) {
         window.location.reload();
       }
     });
+  }
 
+  public typeList(Category: string) {
+    this.type = Category;
+    this.searchKeywords = "a";
+    this.doSearch();
   }
 
 }
