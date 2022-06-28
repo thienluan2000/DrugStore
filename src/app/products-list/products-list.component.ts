@@ -16,8 +16,9 @@ export class ProductsListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const searchKeywords = this.route.snapshot.queryParamMap.get('key');
-    const typeId = this.route.snapshot.queryParamMap.get('keyId');
+    const snapshot = this.route.snapshot;
+    const searchKeywords: string = (snapshot.queryParamMap.get('key') || '');
+    const typeId: string = (snapshot.queryParamMap.get('keyId') || '');
     console.log(searchKeywords, typeId);
     this.productService.getList(searchKeywords, typeId).subscribe(res => {
       this.products = (res || []);

@@ -224,21 +224,34 @@ export class ProductService {
   }
 
 
-  public getList(keyword: string | null, typeId: string | null): Observable<IProductModel[]> {
-    if (keyword === null || keyword === '' && typeId === null || typeId === '') {
-      console.log(keyword, typeId)
-      return of(this.products);
+  public getList(keyword: string, category: string): Observable<IProductModel[]> {
+    // if (keyword === null || keyword === '' && typeId === null || typeId === '') {
+    //   console.log(keyword, typeId,'1')
+    //   return of(this.products);
+    // }
+    // if (typeId != null || typeId != '' && keyword === null || keyword === '') {
+    //   const products = this.products.filter((v) => v.classify.indexOf(typeId!) > -1);
+    //   console.log(keyword, typeId,'2');
+    //   return of(products);
+    // }
+    // else {
+    //   const products = this.products.filter((v) => v.name.toLowerCase().indexOf(keyword.toLowerCase()) > -1);
+    //   console.log(keyword, typeId,'3');
+    //   return of(products);
+    // }
+
+    let result = this.products;
+
+    if (category !== '') {
+      result = this.products.filter(v => v.classify.indexOf(category!) > -1);
     }
-    if (typeId != null || typeId != '' && keyword === null || keyword === '') {
-      const products = this.products.filter((v) => v.classify.indexOf(typeId!) > -1);
-      console.log(keyword, typeId);
-      return of(products);
+
+    if (keyword !== '') {
+      result = result.filter(v => v.name.toLowerCase().indexOf(keyword.toLowerCase()) > -1);
     }
-    else {
-      const products = this.products.filter((v) => v.name.toLowerCase().indexOf(keyword.toLowerCase()) > -1);
-      console.log(keyword, typeId);
-      return of(products);
-    }
+
+    return of(result);
+
   }
 
 }

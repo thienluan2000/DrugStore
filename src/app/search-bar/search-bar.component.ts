@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Params, Router } from '@angular/router';
 
 @Component({
   selector: 'app-search-bar',
@@ -7,17 +7,22 @@ import { Router } from '@angular/router';
   styleUrls: ['./search-bar.component.scss']
 })
 export class SearchBarComponent implements OnInit {
-  public searchKeywords: string | null = null;
-  public type: string | null = null;
+  public searchKeywords?: string;
+  public type?: string;
   constructor(
     private router: Router) {
   }
   ngOnInit(): void {
   }
 
-  public doSearch() {
+  public doSearch(category?: string) {
+    if (category) {
+      this.type = category;
+      localStorage.setItem('category', JSON.stringify(this.type));
+    }
+
     const canReload = (window.location.pathname === '/');
-    this.router.navigate(['/'], { queryParams: (this.searchKeywords ? { key: this.searchKeywords, keyId: this.type } : undefined) }).then(() => {
+    this.router.navigate(['/'], { queryParams: { key: (this.searchKeywords || undefined), keyId: (this.type || JSON.parse(localStorage.getItem('category') || '{}') || undefined) } }).then(() => {
       this.searchKeywords = '';
       if (canReload) {
         window.location.reload();
@@ -25,10 +30,10 @@ export class SearchBarComponent implements OnInit {
     });
   }
 
-  public typeList(Category: string) {
-    this.type = Category;
-    this.searchKeywords = "a";
-    this.doSearch();
-  }
+  // public typeList(Category: string) {
+  //   this.type = Category;
+  //   //this.searchKeywords = "searchKey";
+  //   this.doSearch();
+  // }
 
 }
