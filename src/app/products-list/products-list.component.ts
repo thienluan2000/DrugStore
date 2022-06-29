@@ -12,6 +12,7 @@ export class ProductsListComponent implements OnInit {
   public selectedPage: number = 1;
   public pageSize: number = 8;
   public currentProduct: IProductModel | null = null;
+ 
   constructor(private productService: ProductService, private route: ActivatedRoute,) {
   }
 

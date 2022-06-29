@@ -20,9 +20,8 @@ export class SearchBarComponent implements OnInit {
       this.type = category;
       localStorage.setItem('category', JSON.stringify(this.type));
     }
-
     const canReload = (window.location.pathname === '/');
-    this.router.navigate(['/'], { queryParams: { key: (this.searchKeywords || undefined), keyId: (this.type || JSON.parse(localStorage.getItem('category') || '{}') || undefined) } }).then(() => {
+    this.router.navigate(['/'], { queryParams: { key: (this.searchKeywords || undefined), keyId: (this.type || JSON.parse(localStorage.getItem('category') || 'null') || undefined) } }).then(() => {
       this.searchKeywords = '';
       if (canReload) {
         window.location.reload();
@@ -30,10 +29,8 @@ export class SearchBarComponent implements OnInit {
     });
   }
 
-  // public typeList(Category: string) {
-  //   this.type = Category;
-  //   //this.searchKeywords = "searchKey";
-  //   this.doSearch();
-  // }
+  public removeCategory(){
+    localStorage.removeItem("category");
+  }
 
 }

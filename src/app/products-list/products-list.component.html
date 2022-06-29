@@ -1,10 +1,16 @@
+<h1 class="tittle">
+  <span class="badge bg-info rounded-pill">
+    <i class="bi bi-shop"></i> ProductList</span>
+</h1>
+
 <div>
   <div class=" list-group list-group-horizontal-md break">
-    <product-col *ngFor="let item of products | paginate: { itemsPerPage: pageSize, currentPage: selectedPage }" [product]="item">
+    <product-col *ngFor="let item of products | paginate: { itemsPerPage: pageSize, currentPage: selectedPage }"
+      [product]="item">
     </product-col>
 
   </div>
   <div class="pagination justify-content-center">
-      <pagination-controls (pageChange)="selectedPage = $event"></pagination-controls>
+    <pagination-controls (pageChange)="selectedPage = $event"></pagination-controls>
   </div>
 </div>
