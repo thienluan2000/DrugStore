@@ -29,7 +29,7 @@ export class SearchBarComponent implements OnInit {
     });
   }
 
-  public removeCategory(){
+  public removeCategory() {
     localStorage.removeItem("category");
   }
 

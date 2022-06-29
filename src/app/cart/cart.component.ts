@@ -9,11 +9,11 @@ import { NotificationService } from 'src/services/notification.service';
   styleUrls: ['./cart.component.scss']
 })
 export class CartComponent implements OnInit {
-  information! : ICustomerModel;
+  information!: ICustomerModel;
   items = this.cartService.getItems();
   totalBill = this.cartService.countBill();
   item!: IProductModel | null;
-  constructor(private cartService: CartService,private notifyService: NotificationService) { }
+  constructor(private cartService: CartService, private notifyService: NotificationService) { }
 
   ngOnInit(): void {
     this.information = new ICustomerModel('', '', '', '', '',);
@@ -27,15 +27,15 @@ export class CartComponent implements OnInit {
     this.cartService.removeProduct(item);
   }
 
-  alertQuantity(){
-    this.notifyService.showWarning("If you change the Quantity , Please click Update TotalPrice Button to update the new total price","Warning!");
+  alertQuantity() {
+    this.notifyService.showWarning("If you change the Quantity , Please click Update TotalPrice Button to update the new total price", "Warning!");
   }
 
   updateTotalPrice(item: IProductModel) {
     this.cartService.updateTotalPrice(item);
   }
 
-  saveInformation(information: ICustomerModel){
+  saveInformation(information: ICustomerModel) {
     this.cartService.saveInformation(information);
   }
 

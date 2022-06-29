@@ -12,7 +12,7 @@ export class ProductsListComponent implements OnInit {
   public selectedPage: number = 1;
   public pageSize: number = 8;
   public currentProduct: IProductModel | null = null;
- 
+  typeList: string = '';
   constructor(private productService: ProductService, private route: ActivatedRoute,) {
   }
 
@@ -20,6 +20,7 @@ export class ProductsListComponent implements OnInit {
     const snapshot = this.route.snapshot;
     const searchKeywords: string = (snapshot.queryParamMap.get('key') || '');
     const typeId: string = (snapshot.queryParamMap.get('keyId') || '');
+    this.typeList = typeId;
     console.log(searchKeywords, typeId);
     this.productService.getList(searchKeywords, typeId).subscribe(res => {
       this.products = (res || []);

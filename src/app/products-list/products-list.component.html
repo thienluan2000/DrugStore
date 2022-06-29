@@ -1,6 +1,11 @@
-<h1 class="tittle">
+<h1 class="title" [ngSwitch]="typeList">
   <span class="badge bg-info rounded-pill">
-    <i class="bi bi-shop"></i> ProductList</span>
+    <div class="bi bi-shop" *ngSwitchCase="''"> All Products List</div>
+    <div class="bi bi-bandaid" *ngSwitchCase="'Medicine'"> Medicine List</div>
+    <div class="bi bi-archive" *ngSwitchCase="'Food Supplement'"> Food Supplement List</div>
+    <div class="bi bi-ticket" *ngSwitchCase="'Mask'"> Mask List</div>
+    <div class="bi bi-eyedropper" *ngSwitchCase="'Medical Instruments'"> Medical Instruments List</div>
+  </span>
 </h1>
 
 <div>

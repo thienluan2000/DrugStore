@@ -1,7 +1,7 @@
 <div id="wrap" *ngIf="product">
   <div id="container" class=" py-1 px-2 ms-1 mt-3">
     <div class="product card ">
-      <div  routerLink="product/{{ product.id }}">
+      <div routerLink="product/{{ product.id }}">
         <product-image [product]="product"></product-image>
         <div class="text-center">
           <div class="content">
