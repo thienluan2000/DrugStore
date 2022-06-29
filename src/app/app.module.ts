@@ -13,7 +13,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
-import { NavbarComponent } from './navbar/navbar.component';
 import { ProductsListComponent } from './products-list/products-list.component';
 import { ProductColComponent } from './product-col/product-col.component';
 import { ProductImageComponent } from './product-image/product-image.component';
@@ -32,7 +31,6 @@ import { SignInComponent } from './sign-in/sign-in.component';
     AppComponent,
     HeaderComponent,
     SearchBarComponent,
-    NavbarComponent,
     ProductsListComponent,
     ProductColComponent,
     ProductImageComponent,
