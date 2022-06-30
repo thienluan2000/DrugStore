@@ -12,17 +12,13 @@ export class CartComponent implements OnInit {
   information!: ICustomerModel;
   items = this.cartService.getItems();
   totalBill = this.cartService.countBill();
-  item!: IProductModel ;
-  alert:boolean = false;
-  check!: number;
+  item!: IProductModel;
+  // alert: boolean = false;
+  // check!: number;
   constructor(private cartService: CartService, private notifyService: NotificationService) { }
 
   ngOnInit(): void {
     this.information = new ICustomerModel('', '', '', '', '',);
-    this.check = this.item?.quantity*this.item?.price;
-    if(this.item.totalPrice !== this.check){
-      this.alert = true;
-    }
   }
 
   clearCart() {
@@ -45,6 +41,12 @@ export class CartComponent implements OnInit {
     this.cartService.saveInformation(information);
   }
 
-  
+  // checkPrice(){
+  //   this.check = this.item?.quantity * this.item?.price;
+  //   if (this.item.totalPrice !== this.check) {
+  //     this.alert = true;
+  //   }
+  // }
+
 
 }

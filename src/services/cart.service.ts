@@ -8,8 +8,6 @@ import { NotificationService } from './notification.service';
 export class CartService {
   private cartItems: IProductModel[] = [];
   constructor(private notifyService: NotificationService) { }
-
-  //Function add product from list to cart
   public addToCart(product: IProductModel) {
     const existedItem = this.cartItems.some(item => item.id === product.id)
     if (existedItem) {

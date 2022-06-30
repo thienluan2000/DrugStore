@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-
+  public count  =  JSON.parse(localStorage.getItem('key') || '{}').length;
   constructor(private router: Router) { }
 
   ngOnInit(): void {

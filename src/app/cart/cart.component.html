@@ -28,7 +28,7 @@
         <p class="mt-1">Quantity :</p>
         <form #totalPrice="ngForm" (ngSubmit)="updateTotalPrice(item)">
           <input type="number" style="height: 25px; width: 50px" class="ms-2" id="quantity" name="quantity" min="1"
-            max="100" [(ngModel)]="item.quantity" (click)="alertQuantity()" />
+            max="100" [(ngModel)]="item.quantity" (click)="alertQuantity()" onchange="updateTotalPrice(item)" />
           <input type="submit" value="Update Total Price" class="btn btn-warning btn-sm ms-3 mb-1" />
         </form>
       </div>
